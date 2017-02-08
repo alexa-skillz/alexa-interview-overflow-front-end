@@ -9,7 +9,4 @@ Our style guide may be found [here](https://app.frontify.com/d/yaQMU5H2rBGN/alex
 ### Yarn
 
 Our project uses the [Yarn package manager](https://yarnpkg.com/). To add our regular and dev dependencies for this project:
-```yarn```
-or
-```yarn install```
-in the terminal. To get Yarn set up on your machine see the [Yarn installation instructions](https://yarnpkg.com/docs/install) at the Yarn site.
+`yarn` or `yarn install` in the terminal. To get Yarn set up on your machine see the [Yarn installation instructions](https://yarnpkg.com/docs/install) at the Yarn site.
