@@ -29,7 +29,7 @@ if (production) {
     }),
     new CleanPlugin()
   ]);
-}
+};
 
 module.exports = {
   entry: `${__dirname}/app/entry.js`,

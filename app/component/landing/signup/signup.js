@@ -1,5 +1,7 @@
 'use strict';
 
+require('./_signup.scss');
+
 module.exports = {
   template: require('./signup.html'),
   controller: ['$log', '$location', 'authService', SignupController],
@@ -22,4 +24,4 @@ function SignupController($log, $location, authService) {
       $location.url('/home');
     });
   };
-}
+};

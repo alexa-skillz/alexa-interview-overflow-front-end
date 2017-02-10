@@ -1,1 +1,16 @@
-<!-- placeholder -->
+<section class="home">
+  <create-gallery></create-gallery>
+  <input class="input-std" ng-model="homeCtrl.gallerySearchTerm" type="text" placeholder="search galleries here">
+  <p>Galleries</p>
+  <div class="gallery-item-container">
+    <ul>
+      <gallery-item
+        ng-repeat="item in homeCtrl.galleries | gallerySearch: homeCtrl.gallerySearchTerm | orderBy: 'name'"
+        gallery="item"
+        delete-done="homeCtrl.galleryDeleteDone(galleryData)"
+        ng-click="homeCtrl.currentGallery = item">
+      </gallery-item>
+    </ul>
+  </div>
+  <thumbnail-container ng-if="homeCtrl.currentGallery" gallery="homeCtrl.currentGallery"></thumbnail-container>
+</section>

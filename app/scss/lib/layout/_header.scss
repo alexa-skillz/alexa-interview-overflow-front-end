@@ -1,1 +1,24 @@
-// placeholder
+@import "../theme/vars";
+
+header {
+  font-family: Helvetica;
+  background: $dark-grey;
+  color: $white;
+  height: 10.5vh;
+  padding-left: 1vw;
+
+  img {
+    width: 6vh;
+    padding: 0 1vh;
+    float: left;
+    margin-top: 1.5vh;
+  }
+
+  h2 {
+    margin-top: 3vh;
+    font-size: 3.5vh;
+    float: left;
+    font-weight: 200;
+    letter-spacing: 1.1px;
+  }
+}

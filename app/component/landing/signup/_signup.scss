@@ -1,1 +1,37 @@
 @import "../../../scss/lib/theme/vars";
+
+.signup {
+  font: $font-family;
+  width: 95%;
+
+  h2 {
+    font-weight: 200;
+    letter-spacing: 1.1px;
+    font-size: 2.5vh;
+    padding: 5vh 0 1vh 0;
+  }
+
+  input {
+    padding: 0 1.4vh;
+    border: 2.5px solid $medium-grey;
+    width: 100%;
+    height: 7vh;
+    margin: 2.5vh 0;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 3;
+  }
+
+  button {
+    background: $dark-grey;
+    color: $white;
+    border: 0 solid $medium-grey;
+    float: right;
+    height: 6.5vh;
+    width: 30%;
+    border-radius: 5px;
+    font-size: 2.5vh;
+    font-weight: 200;
+    cursor: pointer;
+  }
+}

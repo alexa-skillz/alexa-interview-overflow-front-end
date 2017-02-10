@@ -1,1 +1,26 @@
-// placeholder
+@import "../../scss/lib/theme/vars";
+
+.landing {
+  padding: 0 3vh 35vh 3vh;
+  background: $light-grey;
+  font-family: $font-family;
+  color: $dark-grey;
+
+  p {
+    float: right;
+    margin-top: 2vh;
+    font-size: 2vh;
+    padding-right: 4vh;
+  }
+
+  a {
+    font-weight: bold;
+    clear: both;
+    font-size: 2vh;
+    float: right;
+    margin: 2vh;
+    text-decoration: none;
+    color: $dark-grey;
+    padding-right: 5vh;
+  }
+}

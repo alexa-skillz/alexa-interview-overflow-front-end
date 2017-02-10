@@ -13,6 +13,8 @@
         placeholder="username"
         ng-minlength="4"
         ng-model="loginCtrl.user.username" required>
+
+      <input type="text" placeholder="email">
     </div>
 
     <div
@@ -21,6 +23,7 @@
         'success': loginForm.password.$valid,
       }">
       <input type="password" name="password"
+        ng-disabled="loginForm.username.$invalid"
         placeholder="password"
         ng-minlength="3"
         ng-model="loginCtrl.user.password" required>

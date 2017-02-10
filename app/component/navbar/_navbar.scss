@@ -1,1 +1,39 @@
-// placeholder
+@import "../../scss/lib/theme/vars";
+
+.navbar {
+  color: $white;
+  background: $dark-grey;
+  height: 10vh;
+  font-family: $font-family;
+
+  img {
+    width: 6vh;
+    padding: 0 1vh;
+    float: left;
+    margin-top: 1.5vh;
+  }
+
+  h2 {
+    margin-top: 3vh;
+    font-size: 3vh;
+    float: left;
+  }
+
+  button {
+    float: right;
+    margin-top: 2.5vh;
+    margin-right: 2vh;
+    border-radius: 10px;
+    font-size: 2vh;
+    font-weight: 200;
+    cursor: pointer;
+  }
+
+  .nav-btn {
+    background: #D8D8D8;
+    color: $dark-grey;
+    padding: 0;
+    height: 4vh;
+    width: 12%;
+  }
+}
