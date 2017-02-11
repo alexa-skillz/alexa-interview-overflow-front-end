@@ -42,7 +42,7 @@ function authService($q, $log, $http, $window){
   service.signup = function(user) {
     $log.debug('authService.signup()');
 
-    let url = `${__API_URL__}/api/signup`;
+    let url = `${__API_URL__}/register`;
     let config = {
       headers: {
         'Content-Type': 'application/json',
@@ -64,16 +64,18 @@ function authService($q, $log, $http, $window){
   service.login = function(user){
     $log.debug('authService.login()');
 
-    let url = `${__API_URL__}/api/signin`;
-    let base64 = $window.btoa(`${user.username}:${user.password}`);
+    let url = `${__API_URL__}/login`;
+    let data = {
+      username: user.username,
+      password: user.password,
+    };
     let config = {
       headers: {
         Accept: 'application/json',
-        Authorization: `Basic ${base64}`,
       }
     };
 
-    return $http.get(url, config)
+    return $http.post(url, data, config)
     .then( res => {
       $log.log('success', res.data);
       return setToken(res.data);
