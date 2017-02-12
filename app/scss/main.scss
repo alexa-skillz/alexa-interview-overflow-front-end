@@ -1,8 +1,17 @@
+// base
 @import '../scss/lib/base/reset';
 @import '../scss/lib/theme/vars';
 @import '../scss/lib/base/base';
+
+// layout
 @import '../scss/lib/layout/header';
 @import '../scss/lib/layout/footer';
 @import '../scss/lib/layout/content';
+
+// view
 @import '../view/home/home';
 @import '../view/landing/landing';
+
+
+// components
+@import '../component/navbar/navbar';
