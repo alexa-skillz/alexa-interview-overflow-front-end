@@ -1,8 +1,11 @@
 <section class="navbar">
-  <h2>Interview Overflow</h2>
   <nav>
-    <div ng-hide="navbarCtrl.hideButtons">
-      <button class="btn-sm" ng-click="navbarCtrl.logout()">sign out</button>
-    </div>
+    <img src="../../assets/img/logo.png" alt="interview overflow logo">
+    <h2>Interview Overflow</h2>
+    <ul>
+      <li><a href="/ask">Ask a question</a></li>
+      <li ng-hide="navbarCtrl.hideButtons"><a href="/profile/me">profile</a></li>
+      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()">sign out</li>
+    </ul>
   </nav>
 </section>
