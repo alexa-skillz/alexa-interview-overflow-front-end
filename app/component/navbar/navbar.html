@@ -1,1 +1,11 @@
-<!-- placeholder -->
+<section class="navbar">
+  <nav>
+    <img src="../../assets/img/logo.png" alt="interview overflow logo">
+    <h2>Interview Overflow</h2>
+    <ul>
+      <li><a href="/ask">Ask a question</a></li>
+      <li ng-hide="navbarCtrl.hideButtons"><a href="/profile/me">profile</a></li>
+      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()">sign out</li>
+    </ul>
+  </nav>
+</section>
