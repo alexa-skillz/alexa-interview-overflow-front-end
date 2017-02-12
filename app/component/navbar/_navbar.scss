@@ -1,16 +1,10 @@
-// @import '../../scss/lib/theme/vars';
-
 .navbar {
-  // background: red;
-  width: 100%;
-  margin-bottom: $gutter-std;
-  // padding: $gutter-std;
-
   nav {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: $gutter-std;
+    margin-bottom: $gutter-std * 2;
   }
 
   img {
@@ -20,14 +14,12 @@
   }
 
   .logo-container {
-    padding: $gutter-std;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
 
   .signout-container {
-    padding: $gutter-std;
     display: flex;
     flex-direction: row;
     align-items: center;
