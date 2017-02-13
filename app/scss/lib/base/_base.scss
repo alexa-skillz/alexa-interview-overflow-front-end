@@ -2,6 +2,54 @@
   // outline: 1px orange solid;
 }
 
-body {
-  margin: 0 $gutter-std;
+html, body {
+  width: 100%;
+  font-family: $font-std;
+  font-size: 1.5vw;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $link-std;
+
+  &:hover {
+    color: $orange;
+  }
+}
+
+input {
+  width: 50%;
+  height: 2vw;
+  margin: $gutter-sm 0;
+  // padding: 0 $gutter-sm;
+}
+
+button {
+  box-sizing: border-box;
+  width: 50%;
+  height: 2vw;
+  border: none;
+  background: $ltgray;
+  display: block;
+  margin: $gutter-sm 0;
+  // padding: 0 $gutter-sm;
+
+  &:hover {
+    background: $orange;
+  }
+}
+
+h2 {
+  padding: $gutter-sm 0;
+  margin: $gutter-sm 0;
+}
+
+span {
+  padding: $gutter-sm 0;
+  margin: $gutter-sm 0;
 }
