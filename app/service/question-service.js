@@ -33,10 +33,10 @@ function questionService($q, $log, $http, authService) {
 
   };
 
-  service.getQuestionByID = function() {
+  service.getQuestionByID = function(questionID) {
     $log.debug('inside of service.getQuestionByID()');
 
-    let url = `${__API_URL__}/api/questions/:questionID`;
+    let url = `${__API_URL__}/api/questions/${questionID}`;
     let config = {
       headers: {
         Accept: 'application/json'
@@ -46,6 +46,8 @@ function questionService($q, $log, $http, authService) {
     return $http.get(url, config)
     .then( res => {
       $log.log('question retrieved', res);
+      service.questions = res.data;
+      return service.questions;
     });
 
   };

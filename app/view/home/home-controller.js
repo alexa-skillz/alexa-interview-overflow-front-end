@@ -1,10 +1,11 @@
 'use strict';
 
-module.exports = ['$log', '$rootScope', 'questionService', 'answerService', HomeController];
+module.exports = ['$log', '$rootScope', '$stateParams', 'questionService', 'answerService', HomeController];
 
-function HomeController($log, $rootScope, questionService, answerService) {
+function HomeController($log, $rootScope, $stateParams, questionService, answerService) {
   $log.debug('inside HomeController');
 
+  console.log('$stateParams', $stateParams);
   this.questions = [];
   this.answers = [];
 
