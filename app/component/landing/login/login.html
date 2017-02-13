@@ -1,8 +1,11 @@
 <section class="login-form">
+
   <h2>sign in.</h2>
+
   <form
     name="loginForm"
     ng-submit="loginCtrl.login()" novalidate>
+
     <div
       ng-class="{
         'error': loginForm.username.$invalid,
@@ -27,5 +30,7 @@
     </div>
 
     <button class="btn-std">sign in</button>
+
   </form>
+  
 </section>

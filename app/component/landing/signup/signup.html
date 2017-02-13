@@ -1,22 +1,29 @@
 <section class="signup">
-  <span>sign up.</span>
+
+  <h2>sign up.</h2>
+
   <form class="signup-form"
     ng-submit="signupCtrl.signup(signupCtrl.user)"
     no-validate>
 
+    <div>
       <input class="input-std"
         type="text"
         placeholder="username"
         ng-minlength="4"
         ng-model="signupCtrl.user.username" required>
+    </div>
 
+    <div>
       <input class="input-std"
         type="password"
         placeholder="password"
         ng-minlength="3"
         ng-model="signupCtrl.user.password" required>
+    </div>
 
-      <input type="submit" class="btn-std" value="sign up">
+    <button type="submit" class="btn-std" value="sign up">sign up</button>
+
   </form>
-  <div class="clearfix"></div>
+
 </section>

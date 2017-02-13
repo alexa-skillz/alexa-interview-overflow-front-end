@@ -23,10 +23,9 @@ a {
 }
 
 input {
+  box-sizing: border-box;
   width: 50%;
   height: 2vw;
-  margin: $gutter-sm 0;
-  // padding: 0 $gutter-sm;
 }
 
 button {
@@ -36,8 +35,6 @@ button {
   border: none;
   background: $ltgray;
   display: block;
-  margin: $gutter-sm 0;
-  // padding: 0 $gutter-sm;
 
   &:hover {
     background: $orange;
@@ -46,10 +43,24 @@ button {
 
 h2 {
   padding: $gutter-sm 0;
+}
+
+div {
   margin: $gutter-sm 0;
 }
 
 span {
   padding: $gutter-sm 0;
-  margin: $gutter-sm 0;
+}
+
+li {
+  padding: $gutter-sm 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.bold {
+  font-weight: bold;
 }
