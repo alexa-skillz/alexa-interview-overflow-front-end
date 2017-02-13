@@ -1,1 +1,66 @@
-// placeholder
+* {
+  // outline: 1px orange solid;
+}
+
+html, body {
+  width: 100%;
+  font-family: $font-std;
+  font-size: 1.5vw;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $link-std;
+
+  &:hover {
+    color: $orange;
+  }
+}
+
+input {
+  box-sizing: border-box;
+  width: 50%;
+  height: 2vw;
+}
+
+button {
+  box-sizing: border-box;
+  width: 50%;
+  height: 2vw;
+  border: none;
+  background: $ltgray;
+  display: block;
+
+  &:hover {
+    background: $orange;
+  }
+}
+
+h2 {
+  padding: $gutter-sm 0;
+}
+
+div {
+  margin: $gutter-sm 0;
+}
+
+span {
+  padding: $gutter-sm 0;
+}
+
+li {
+  padding: $gutter-sm 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.bold {
+  font-weight: bold;
+}

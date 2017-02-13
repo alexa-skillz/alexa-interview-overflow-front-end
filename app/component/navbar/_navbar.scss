@@ -1,1 +1,34 @@
-// placeholder
+// @import '../../scss/lib/theme/vars';
+
+.navbar {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: $gutter-std 0;
+    margin: 0 auto $gutter-std auto;
+  }
+
+  img {
+    height: 4vw;
+    margin-right: $gutter-std;
+    min-height: 50px;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .signout-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .signout-container li {
+    margin-left: $gutter-std;
+  }
+}

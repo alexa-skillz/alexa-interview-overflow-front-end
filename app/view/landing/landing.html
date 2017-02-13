@@ -1,8 +1,11 @@
+
 <section class="landing">
+
   <div class="join-container"
     ng-if="landingCtrl.showSignup">
     <div class="join-inner">
       <signup></signup>
+      <div class="clearfix"></div>
       <span class="sign-container">
         <span>already a member?</span>
         <a href="/#/join#login"
@@ -17,6 +20,7 @@
     ng-if="!landingCtrl.showSignup">
     <div class="join-inner">
       <login></login>
+      <div class="clearfix"></div>
       <span class="sign-container">
         <span>want to signup?</span>
         <a href="/#/join#signup"
@@ -26,4 +30,5 @@
       </span>
     </div>
   </div>
+
 </section>
