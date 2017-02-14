@@ -95,5 +95,34 @@ function questionService($q, $log, $http, authService) {
     });
   };
 
+  service.deleteQuestion = function(questionID) {
+    $log.debug('questionService.updateQuestion()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/questions/${questionID}`;
+      let config = {
+        headers: {
+          // Authorization: `Bearer ${token}`
+        }
+      };
+
+      return $http.delete(url, config);
+    })
+    .then( res => {
+      for (let i = 0; i < service.questions.length; i++) {
+        let current = service.questions[i];
+        if (current._id === questionID) {
+          service.questions.splice(i, 1);
+          break;
+        }
+      }
+    })
+    .catch( err => {
+      $log.error(err.message);
+      return $q.reject(err);
+    });
+  };
+
   return service;
 }
