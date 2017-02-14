@@ -43,7 +43,7 @@ function questionService($q, $log, $http, authService) {
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
-          // Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`
         }
       };
 
@@ -71,7 +71,7 @@ function questionService($q, $log, $http, authService) {
       let config = {
         headers: {
           Accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjIyMDM3OSwiaWF0IjoxNDg3MDM5OTc5fQ.jq9UJ7RAua-OMvEykDz-JzaF3dbqMMq2HPenjVFHu5s',
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       };
@@ -103,7 +103,7 @@ function questionService($q, $log, $http, authService) {
       let url = `${__API_URL__}/api/questions/${questionID}`;
       let config = {
         headers: {
-          // Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`
         }
       };
 
@@ -133,7 +133,7 @@ function questionService($q, $log, $http, authService) {
       let config = {
         headers: {
           Accept: 'application/json',
-          Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjIyMDM3OSwiaWF0IjoxNDg3MDM5OTc5fQ.jq9UJ7RAua-OMvEykDz-JzaF3dbqMMq2HPenjVFHu5s',
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       };
@@ -167,7 +167,7 @@ function questionService($q, $log, $http, authService) {
       let config = {
         headers: {
           Accept: 'application/json',
-          Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjIyMDM3OSwiaWF0IjoxNDg3MDM5OTc5fQ.jq9UJ7RAua-OMvEykDz-JzaF3dbqMMq2HPenjVFHu5s',
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       };

@@ -24,6 +24,7 @@ function authService($q, $log, $http, $window){
   service.getToken = function(){
     $log.debug('authService.getToken');
     if (token) {
+      console.log('getToken', token);
       return $q.resolve(token);
     }
 
@@ -54,7 +55,7 @@ function authService($q, $log, $http, $window){
     return $http.post(url, user, config)
     .then( res => {
       $log.log('success', res.data);
-      return setToken(res.data);
+      return setToken(res.data.token);
     })
     .catch(err => {
       $log.error('failure', err.message);
@@ -79,7 +80,7 @@ function authService($q, $log, $http, $window){
     return $http.post(url, data, config)
     .then( res => {
       $log.log('success', res.data);
-      return setToken(res.data);
+      return setToken(res.data.token);
     })
     .catch( err => {
       $log.error(err.message);
@@ -89,7 +90,7 @@ function authService($q, $log, $http, $window){
 
   service.isLoggedIn = function() {
     var token = service.getToken();
-
+    console.log('isLoggedIn token', token);
     if (token) {
       var payload = JSON.parse($window.atob(token.split('.')[1]));
 

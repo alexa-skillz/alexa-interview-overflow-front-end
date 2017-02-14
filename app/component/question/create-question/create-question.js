@@ -18,6 +18,7 @@ function CreateQuestionController($log, questionService, authService) {
     .then( () => {
       this.question.content = null;
       this.question.author = authService.currentUserId();
+      console.log(this.question);
     });
   };
 }
