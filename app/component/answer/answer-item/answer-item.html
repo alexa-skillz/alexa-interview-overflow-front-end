@@ -1,5 +1,5 @@
 <section class="answer" ng-cloak>
-  <div>{{ answerCtrl.answer.content }}</div>
+  <div>{{ answerItemCtrl.answer.content }}</div>
   <div>
     <span>
       <div class="btn-group" uib-dropdown>
@@ -18,8 +18,8 @@
       </div>
     </span>
     <ul>
-      <li>{{ answerCtrl.answer.updated | date:'short' }}</li>
-      <li>Mark Twain</li>
+      <li>{{ answerItemCtrl.answer.updated | date:'short' }}</li>
+      <li>Author: {{ answerItemCtrl.answer.author.username }}</li>
     </ul>
   </div>
 </section>

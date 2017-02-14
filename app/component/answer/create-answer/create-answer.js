@@ -3,7 +3,7 @@
 module.exports = {
   template: require('./create-answer.html'),
   controller: ['$log', '$stateParams', 'answerService', 'authService', CreateAnswerController],
-  controllerAs: 'createAnswerCtrl'
+  controllerAs: 'createAnswerCtrl',
 };
 
 function CreateAnswerController($log, $stateParams, answerService, authService) {
