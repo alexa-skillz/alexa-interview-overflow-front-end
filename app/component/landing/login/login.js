@@ -13,7 +13,7 @@ function LoginController($log, $location, authService) {
 
   authService.getToken()
   .then( () => {
-    $location.url('/');
+    $location.url('');
   });
 
   this.login = function() {
@@ -21,7 +21,7 @@ function LoginController($log, $location, authService) {
 
     authService.login(this.user)
     .then( () => {
-      $location.url('/');
+      $location.url('');
     });
   };
 }

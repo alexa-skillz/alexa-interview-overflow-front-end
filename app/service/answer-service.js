@@ -32,8 +32,34 @@ function answerService($q, $log, $http, authService) {
     });
 
   };
+  // END OF getAnswers function
 
+  service.createAnswer = function(questionID, answer) {
+    $log.debug('inside of service.createAnswer()');
 
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/questions/${questionID}/answers`;
+      let config = {
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      };
 
+      return $http.post(url, answer, config);
+    })
+    .then( res => {
+      $log.log('answer created');
+      let answer = res.data;
+      service.answers.unshift(answer);
+      return answer;
+    })
+    .catch( err => {
+      $log.error(err.message);
+      return $q.reject(err);
+    });
+  };
   return service;
 }
