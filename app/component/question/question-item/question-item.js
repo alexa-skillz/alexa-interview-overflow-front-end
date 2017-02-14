@@ -24,4 +24,8 @@ function QuestionItemController($log, questionService) {
     questionService.upvoteQuestion(this.question._id);
   };
 
+  this.downvoteQuestion = function() {
+    questionService.downvoteQuestion(this.question._id);
+  };
+
 }

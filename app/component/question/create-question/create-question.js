@@ -4,11 +4,11 @@ require('./_create-question.scss');
 
 module.exports = {
   template: require('./create-question.html'),
-  controller: ['$log', 'questionService', CreateQuestionController],
+  controller: ['$log', 'questionService', 'authService', CreateQuestionController],
   controllerAs: 'createQuestionCtrl',
 };
 
-function CreateQuestionController($log, questionService) {
+function CreateQuestionController($log, questionService, authService) {
   $log.debug('CreateQuestionController');
 
   this.question = {};
@@ -17,6 +17,7 @@ function CreateQuestionController($log, questionService) {
     questionService.createQuestion(this.question)
     .then( () => {
       this.question.content = null;
+      this.question.author = authService.currentUserId();
     });
   };
 }

@@ -71,7 +71,7 @@ function questionService($q, $log, $http, authService) {
       let config = {
         headers: {
           Accept: 'application/json',
-          // Authorization: `Bearer ${token}`,
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjIyMDM3OSwiaWF0IjoxNDg3MDM5OTc5fQ.jq9UJ7RAua-OMvEykDz-JzaF3dbqMMq2HPenjVFHu5s',
           'Content-Type': 'application/json'
         }
       };
@@ -125,8 +125,7 @@ function questionService($q, $log, $http, authService) {
   };
 
   service.upvoteQuestion = function(questionID, questionData) {
-    $log.debug('questionService.updateQuestion()');
-    console.log(authService.getToken());
+    $log.debug('questionService.upvoteQuestion()');
     return authService.getToken()
     .then( token => {
       console.log(token);
@@ -134,13 +133,45 @@ function questionService($q, $log, $http, authService) {
       let config = {
         headers: {
           Accept: 'application/json',
-          Authorization:`Bearer ${token}`,
+          Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjIyMDM3OSwiaWF0IjoxNDg3MDM5OTc5fQ.jq9UJ7RAua-OMvEykDz-JzaF3dbqMMq2HPenjVFHu5s',
           'Content-Type': 'application/json'
         }
       };
-      console.log(url);
-      console.log(questionData);
-      console.log(config);
+
+      return $http.put(url, questionData, config);
+    })
+    .then( res => {
+      for (let i = 0; i < service.questions.length; i++) {
+        let current = service.questions[i];
+        if (current._id === questionID) {
+
+          service.questions[i] = res.data;
+          break;
+        }
+      }
+
+      return res.data;
+    })
+    .catch( err => {
+      $log.error(err.message);
+      return $q.reject(err);
+    });
+  };
+
+  service.downvoteQuestion = function(questionID, questionData) {
+    $log.debug('questionService.downvoteQuestion()');
+    return authService.getToken()
+    .then( token => {
+      console.log(token);
+      let url = `${__API_URL__}/api/questions/${questionID}/downvote`;
+      let config = {
+        headers: {
+          Accept: 'application/json',
+          Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjIyMDM3OSwiaWF0IjoxNDg3MDM5OTc5fQ.jq9UJ7RAua-OMvEykDz-JzaF3dbqMMq2HPenjVFHu5s',
+          'Content-Type': 'application/json'
+        }
+      };
+
       return $http.put(url, questionData, config);
     })
     .then( res => {
