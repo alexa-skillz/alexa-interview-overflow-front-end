@@ -1,0 +1,14 @@
+<section class="edit">
+  <form class="edit-question"
+    name="editQuestion"
+    ng-submit="editQuestionCtrl.updateQuestion()"
+    novalidate>
+
+    <fieldset>
+      <span class="item-label-name">content:</span>
+      <input name="content" class="name-input" ng-model="editQuestionCtrl.question.content">
+    </fieldset>
+
+    <button type="submit" class="btn-std">update</button>
+  </form>
+</section>

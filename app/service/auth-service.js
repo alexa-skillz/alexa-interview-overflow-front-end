@@ -1,4 +1,5 @@
 'use strict';
+const JWT = require('jwt-client');
 
 module.exports = ['$q', '$log', '$http', '$window', authService];
 
@@ -17,12 +18,14 @@ function authService($q, $log, $http, $window){
 
     $window.localStorage.setItem('token', _token);
     token = _token;
+    console.log('setToken', token);
     return $q.resolve(token);
   }
 
   service.getToken = function(){
     $log.debug('authService.getToken');
     if (token) {
+      console.log('getToken', token);
       return $q.resolve(token);
     }
 
@@ -84,6 +87,30 @@ function authService($q, $log, $http, $window){
       $log.error(err.message);
       return $q.reject(err);
     });
+  };
+
+  service.isLoggedIn = function() {
+    var token = service.getToken();
+    console.log('isLoggedIn token', token);
+    if (token) {
+      var payload = JWT.read(token);
+      console.log('payload', payload);
+      return payload.exp > Date.now() / 1000;
+    } else {
+      return false;
+    }
+  };
+
+
+  service.currentUserId = function() {
+    if(service.isLoggedIn()) {
+      var token = service.getToken();
+      console.log('currentUserId', token);
+      var payload = JWT.read(token);
+      console.log('payload', payload);
+      console.log('payload.claim.username', payload.claim.username);
+      return payload.claim.username;
+    }
   };
 
   return service;

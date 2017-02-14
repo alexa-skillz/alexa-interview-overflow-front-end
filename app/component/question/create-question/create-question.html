@@ -1,0 +1,14 @@
+<section class="create-question">
+  <h2>create a new question</h2>
+  <form name="createQuestionForm"
+    class="question-form"
+    ng-submit="createQuestionCtrl.createQuestion()">
+
+    <fieldset>
+      <label for="content"></label>
+      <input name="content" class="input-std" type="text" placeholder="question content" ng-model="createQuestionCtrl.question.content" required>
+    </fieldset>
+
+    <button class="btn-std" type="submit">create question</button>
+  </form>
+</section>
