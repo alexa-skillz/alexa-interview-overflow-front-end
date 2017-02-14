@@ -42,8 +42,8 @@ function questionService($q, $log, $http, authService) {
       let config = {
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/json'
-          // Authorization: 'Bearer' + authService.getToken()
+          'Content-Type': 'application/json',
+          // Authorization: `Bearer ${token}`
         }
       };
 
@@ -61,5 +61,39 @@ function questionService($q, $log, $http, authService) {
       return $q.reject(err);
     });
   };
+
+  service.updateQuestion = function(questionID, questionData) {
+    $log.debug('questionService.updateQuestion()');
+
+    return authService.getToken()
+    .then( token => {
+      let url = `${__API_URL__}/api/questions/${questionID}`;
+      let config = {
+        headers: {
+          Accept: 'application/json',
+          // Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      };
+
+      return $http.put(url, questionData, config);
+    })
+    .then( res => {
+      for (let i = 0; i < service.questions.length; i++) {
+        let current = service.questions[i];
+        if (current._id === questionID) {
+          service.questions[i] = res.data;
+          break;
+        }
+      }
+
+      return res.data;
+    })
+    .catch( err => {
+      $log.error(err.message);
+      return $q.reject(err);
+    });
+  };
+
   return service;
 }
