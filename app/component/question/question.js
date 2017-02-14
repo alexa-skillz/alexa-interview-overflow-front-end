@@ -11,13 +11,4 @@ module.exports = {
 
 function QuestionController($log, questionService) {
   $log.debug('QuestionController');
-
-  this.question = [];
-
-  this.questionID = function() {
-    questionService.getQuestionByID()
-    .then( question => {
-      this.question = question;
-    });
-  };
 }
