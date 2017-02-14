@@ -1,3 +1,16 @@
 <section class="home">
-  <question ng-repeat="question in homeCtrl.questions" question="question.content"></question>
+  <create-question></create-question>
+  <h2>questions</h2>
+  <!-- <input ng-model="homeCtrl.questionSearchTerm" type="text" placeholder="search"> -->
+  <div class="home-div">
+    <ul>
+      <question-item ng-repeat="item in homeCtrl.questions | questionSearch: homeCtrl.questionSearchTerm"
+        question="item"
+        delete-done="homeCtrl.questionDeleteDone(questionData)"
+        ng-click="homeCtrl.currentQuestion = item">
+      </question-item>
+      <question-item ng-repeat="question in homeCtrl.questions" question="question">
+      </question-item>
+    </ul>
+  </div>
 </section>

@@ -86,5 +86,33 @@ function authService($q, $log, $http, $window){
     });
   };
 
+  service.isLoggedIn = function() {
+    var token = service.getToken();
+
+    if (token) {
+      var payload = JSON.parse($window.atob(token.split('.')[1]));
+
+      return payload.exp > Date.now() / 1000;
+    } else {
+      return false;
+    }
+  };
+
+  service.currentUser = function() {
+    if (service.isLoggedIn()) {
+      var token = service.getToken();
+      var payload = JSON.parse($window.atob(token.split('.')[1]));
+      return payload.username;
+    }
+  };
+
+  service.currentUserId = function() {
+    if (service.isLoggedIn()) {
+      var token = service.getToken();
+      var payload = JSON.parse($window.atob(token.split('.')[1]));
+      return payload._id;
+    }
+  };
+
   return service;
 }
