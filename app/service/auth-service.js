@@ -90,7 +90,7 @@ function authService($q, $log, $http, $window){
   };
 
   service.isLoggedIn = function() {
-    var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjI3ODc0NSwiaWF0IjoxNDg3MDk4MzQ1fQ.dWt97ea6Bu9c92VF4YRrKEAcu2siI3Z9qB2KZL23q4A';
+    var token = service.getToken();
     console.log('isLoggedIn token', token);
     if (token) {
       var payload = JWT.read(token);
@@ -101,25 +101,16 @@ function authService($q, $log, $http, $window){
     }
   };
 
-  // service.currentUser = function() {
-  //   if (service.isLoggedIn()) {
-  //     var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjI3ODc0NSwiaWF0IjoxNDg3MDk4MzQ1fQ.dWt97ea6Bu9c92VF4YRrKEAcu2siI3Z9qB2KZL23q4A';
-  //     console.log('currentUser', token);
-  //     var payload = JWT.read(token);
-  //     console.log('currentUser Payload', payload);
-  //     return payload.username;
-  //   }
-  // };
 
   service.currentUserId = function() {
-    // if (service.isLoggedIn()) {
-      var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGEyMGY3YzNkZWY2ODYzNGYwMDk5OTMiLCJ1c2VybmFtZSI6InRlc3RzaGliYSIsImV4cCI6MTQ5MjI4MjE3NCwiaWF0IjoxNDg3MTAxNzc0fQ.HSY9ywYjBZLOBDS6GAMouuKDmOWhgURzqE1_t0kwm4Y';
+    if(service.isLoggedIn()) {
+      var token = service.getToken();
       console.log('currentUserId', token);
       var payload = JWT.read(token);
       console.log('payload', payload);
       console.log('payload.claim.username', payload.claim.username);
       return payload.claim.username;
-    // }
+    }
   };
 
   return service;
