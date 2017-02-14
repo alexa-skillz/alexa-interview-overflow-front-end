@@ -1,7 +1,5 @@
 'use strict';
 
-require('./_create-question.scss');
-
 module.exports = {
   template: require('./create-question.html'),
   controller: ['$log', 'questionService', 'authService', CreateQuestionController],

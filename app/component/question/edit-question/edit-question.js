@@ -1,7 +1,5 @@
 'use strict';
 
-require('./_edit-question.scss');
-
 module.exports = {
   template: require('./edit-question.html'),
   controller: ['$log', 'questionService', EditQuestionController],

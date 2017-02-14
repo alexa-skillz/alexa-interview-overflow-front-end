@@ -33,7 +33,6 @@ function questionService($q, $log, $http, authService) {
 
   };
 
-<<<<<<< HEAD
   service.createQuestion = function(question) {
     $log.debug('inside of service.createQuestion()');
 
@@ -191,6 +190,7 @@ function questionService($q, $log, $http, authService) {
       $log.error(err.message);
       return $q.reject(err);
     });
+  };
 
   service.getQuestionByID = function(questionID) {
     $log.debug('inside of service.getQuestionByID()');
