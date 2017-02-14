@@ -17,6 +17,13 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       controllerAs: 'homeCtrl'
     },
     {
+      name: 'question by id',
+      url: '/questions/:id',
+      template: require('../view/question/question-view.html'),
+      controller: 'QuestionViewController',
+      controllerAs: 'questionViewCtrl'
+    },
+    {
       name: 'landing',
       url: '/join',
       template: require('../view/landing/landing.html'),
