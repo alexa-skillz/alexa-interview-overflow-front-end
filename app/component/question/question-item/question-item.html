@@ -1,8 +1,8 @@
-<section class="question-item">
+<section class="question-item" ng-cloak>
 
   <li>
     <div class="current-item" ng-if="!questionItemCtrl.showEditQuestion">
-        <p>{{ questionItemCtrl.question.content}}</p>
+        <p><a href="/#!/questions/{{ questionCtrl.question._id }}">{{ questionCtrl.question.content }}</a></p>
         <p>Upvotes: {{ questionItemCtrl.question.upvotes }}</p>
         <p>Downvotes: {{ questionItemCtrl.question.downvotes }}</p>
         <p>Asked on: {{ questionItemCtrl.question.created | date:"MM/dd/yyyy 'at' h:mma" }}</p>

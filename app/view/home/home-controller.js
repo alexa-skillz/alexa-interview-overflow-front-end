@@ -1,11 +1,12 @@
 'use strict';
 
-module.exports = ['$log', '$rootScope', 'questionService', HomeController];
+module.exports = ['$log', '$rootScope', 'questionService', 'answerService', HomeController];
 
-function HomeController($log, $rootScope, questionService) {
+function HomeController($log, $rootScope, questionService, answerService) {
   $log.debug('inside HomeController');
 
   this.questions = [];
+  this.answers = [];
 
   this.showQuestions = function() {
     questionService.getQuestions()
@@ -16,7 +17,17 @@ function HomeController($log, $rootScope, questionService) {
 
   this.showQuestions();
 
+  this.showAnswers = function() {
+    answerService.getAnswers()
+    .then(answers => {
+      this.answers = answers;
+    });
+  };
+
+  this.showAnswers();
+
   $rootScope.$on('$locationChangeSuccess', () => {
     this.showQuestions();
+    this.showAnswers();
   });
 }

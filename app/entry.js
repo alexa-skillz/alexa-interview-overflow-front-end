@@ -9,6 +9,7 @@ const pascalcase = require('pascalcase');
 const uiRouter = require('angular-ui-router');
 const ngTouch = require('angular-touch');
 const ngAnimate = require('angular-animate');
+const uiBootstrap = require('angular-ui-bootstrap');
 
 const alexaSkillz = angular.module('alexaSkillz', [ngTouch, ngAnimate, uiRouter]);
 

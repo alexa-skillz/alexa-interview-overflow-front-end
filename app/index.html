@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/assets/img/favicon.png" rel="icon" type="image/x-icon">
+    <!-- <link href="/assets/img/favicon.ico" rel="icon" type="image/ico"> -->
+    <base href="/">
     <title>Interview Overflow</title>
   </head>
   <body>
     <header>
-      <navbar></navbar>
+      <navbar ng-cloak></navbar>
     </header>
     <main>
-      <ui-view></ui-view>
+      <ui-view ng-cloak></ui-view>
     </main>
     <footer></footer>
   </body>

@@ -55,7 +55,7 @@ function authService($q, $log, $http, $window){
 
     return $http.post(url, user, config)
     .then( res => {
-      $log.log('success', res.data);
+      $log.log('success', res.data.token);
       return setToken(res.data.token);
     })
     .catch(err => {
@@ -80,7 +80,7 @@ function authService($q, $log, $http, $window){
 
     return $http.post(url, data, config)
     .then( res => {
-      $log.log('success', res.data);
+      $log.log('success', res.data.token);
       return setToken(res.data.token);
     })
     .catch( err => {
