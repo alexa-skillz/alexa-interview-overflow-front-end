@@ -124,5 +124,42 @@ function questionService($q, $log, $http, authService) {
     });
   };
 
+  service.upvoteQuestion = function(questionID, questionData) {
+    $log.debug('questionService.updateQuestion()');
+    console.log(authService.getToken());
+    return authService.getToken()
+    .then( token => {
+      console.log(token);
+      let url = `${__API_URL__}/api/questions/${questionID}/upvote`;
+      let config = {
+        headers: {
+          Accept: 'application/json',
+          Authorization:`Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      };
+      console.log(url);
+      console.log(questionData);
+      console.log(config);
+      return $http.put(url, questionData, config);
+    })
+    .then( res => {
+      for (let i = 0; i < service.questions.length; i++) {
+        let current = service.questions[i];
+        if (current._id === questionID) {
+
+          service.questions[i] = res.data;
+          break;
+        }
+      }
+
+      return res.data;
+    })
+    .catch( err => {
+      $log.error(err.message);
+      return $q.reject(err);
+    });
+  };
+
   return service;
 }

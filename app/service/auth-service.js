@@ -17,6 +17,7 @@ function authService($q, $log, $http, $window){
 
     $window.localStorage.setItem('token', _token);
     token = _token;
+    console.log('setToken', token);
     return $q.resolve(token);
   }
 

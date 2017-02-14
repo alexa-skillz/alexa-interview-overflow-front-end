@@ -19,4 +19,9 @@ function QuestionItemController($log, questionService) {
   this.deleteQuestion = function() {
     questionService.deleteQuestion(this.question._id);
   };
+
+  this.upvoteQuestion = function() {
+    questionService.upvoteQuestion(this.question._id);
+  };
+
 }

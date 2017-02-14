@@ -17,4 +17,5 @@ function EditQuestionController($log, questionService) {
   this.updateQuestion = function() {
     questionService.updateQuestion(this.question._id, this.question);
   };
+
 }
