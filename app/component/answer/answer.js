@@ -11,4 +11,8 @@ module.exports = {
 
 function AnswerController($log, answerService) {
   $log.debug('AnswerController');
+
+  // $log.log(':::', answer);
+  // let answersList = questionViewCtrl.question.answers.$index;
+  // $log.log(':::', questionViewCtrl.question.answers.$index);
 }

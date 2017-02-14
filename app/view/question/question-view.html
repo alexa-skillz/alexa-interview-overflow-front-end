@@ -1,5 +1,14 @@
 <section class="questions">
   <h2>question page</h2>
+
   <question question="questionViewCtrl.question"></question>
-  <answer ng-repeat="answer in questionViewCtrl.question.answers" answer="questionViewCtrl.question.answers"></answer>
+
+  <answer ng-repeat="answer in questionViewCtrl.question.answers" answer="answer"></answer>
+
+  <!-- <answer ng-repeat="answer in questionViewCtrl.question.answers" answer="answersList"></answer> -->
+
+  <!-- <answer answer="questionViewCtrl.question.answers"></answer> -->
+
+  <!-- <answer ng-repeat="answer in questionViewCtrl.question.answers" answer="questionViewCtrl.question.answers.$index.content"></answer> -->
+
 </section>
