@@ -2,17 +2,23 @@
 
 module.exports = {
   template: require('./question-item.html'),
-  controller: ['$log', 'questionService', QuestionItemController],
+  controller: ['$log', 'questionService', 'authService', QuestionItemController],
   controllerAs: 'questionItemCtrl',
   bindings: {
-    question: '<'
+    question: '<',
+    user: '<'
   }
 };
 
-function QuestionItemController($log, questionService) {
+function QuestionItemController($log, questionService, authService) {
   $log.debug('QuestionItemController');
 
   this.showEditQuestion = false;
+
+  authService.currentUserId()
+  .then( payload => {
+    return this.user = payload;
+  });
 
   this.deleteQuestion = function() {
     questionService.deleteQuestion(this.question._id);

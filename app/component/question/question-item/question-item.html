@@ -17,8 +17,11 @@
         </a>
     </div>
 
-    <edit-question ng-if="questionItemCtrl.showEditQuestion" question="questionItemCtrl.question"></edit-question>
-  </li>
-  <button class="delete-btn" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
-  <button class="edit-btn" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
+  <edit-question ng-if="questionItemCtrl.showEditQuestion &&  questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" question="questionItemCtrl.question"></edit-question>
+
+  <button class="delete-btn" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
+
+  <button class="edit-btn" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
+
+
 </section>
