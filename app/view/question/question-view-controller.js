@@ -25,4 +25,5 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService)
     $log.log('run the add answer');
     this.displayQuestion();
   });
+
 }

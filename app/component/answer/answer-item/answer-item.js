@@ -26,4 +26,5 @@ function AnswerItemController($log, $stateParams, answerService) {
     answerService.downvoteAnswer($stateParams.id, this.answer._id);
   };
 
+
 }

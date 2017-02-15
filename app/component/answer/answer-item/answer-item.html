@@ -16,6 +16,7 @@
     </span> -->
     <edit-answer ng-if="answerItemCtrl.showEditAnswer" answer="answerItemCtrl.answer"></edit-answer>
 
+  <!-- <button class="delete-btn" ng-if="answerItemCtrl.answer.author._id = authService.currentUserId()" ng-click="answerItemCtrl.deleteAnswer()">delete</button> -->
     <button class="delete-btn" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
 
     <button class="edit-btn" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
