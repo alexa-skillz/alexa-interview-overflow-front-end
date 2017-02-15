@@ -5,6 +5,7 @@
         <p><a href="/#!/questions/{{ questionItemCtrl.question._id }}">{{ questionItemCtrl.question.content }}</a></p>
         <p>Upvotes: {{ questionItemCtrl.question.upvotes }}</p>
         <p>Downvotes: {{ questionItemCtrl.question.downvotes }}</p>
+        <p>Answers: {{ questionItemCtrl.question.answers.length }}</p>
         <p>Asked on: {{ questionItemCtrl.question.created | date:"MM/dd/yyyy 'at' h:mma" }}</p>
         <p>Updated: {{ questionItemCtrl.question.updated | date:"MM/dd/yyyy 'at' h:mma" }}</p>
         <p>Author: {{ questionItemCtrl.question.author.username }}</p>

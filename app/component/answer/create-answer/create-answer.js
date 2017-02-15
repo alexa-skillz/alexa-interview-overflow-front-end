@@ -16,7 +16,6 @@ function CreateAnswerController($log, $stateParams, $rootScope, answerService, a
     .then( () => {
       $rootScope.$broadcast('addAnswer', this.answer);
       this.answer.content = null;
-      // this.answer.author = authService.currentUserId();git s
     });
   };
 }

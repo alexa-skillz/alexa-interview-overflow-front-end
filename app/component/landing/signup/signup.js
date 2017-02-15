@@ -11,7 +11,7 @@ function SignupController($log, $location, authService) {
 
   authService.getToken()
   .then( () => {
-    $location.url('/home');
+    $location.url('');
   });
 
   this.signup = function(user) {
@@ -19,7 +19,7 @@ function SignupController($log, $location, authService) {
 
     authService.signup(user)
     .then( () => {
-      $location.url('/home');
+      $location.url('');
     });
   };
 }
