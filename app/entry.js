@@ -11,7 +11,7 @@ const ngTouch = require('angular-touch');
 const ngAnimate = require('angular-animate');
 const uiBootstrap = require('angular-ui-bootstrap');
 
-const alexaSkillz = angular.module('alexaSkillz', [ngTouch, ngAnimate, uiRouter]);
+const alexaSkillz = angular.module('alexaSkillz', [ngTouch, ngAnimate, uiRouter, uiBootstrap]);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach( path => {
