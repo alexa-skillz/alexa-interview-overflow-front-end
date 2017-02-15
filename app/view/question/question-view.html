@@ -3,7 +3,7 @@
 
   <question-item question="questionViewCtrl.question"></question-item>
 
-  <answer-item ng-repeat="answer in questionViewCtrl.question.answers" answer="answer" user="questionViewCtrl.user"></answer-item>
+  <answer-item ng-repeat="answer in questionViewCtrl.question.answers" answer="answer" user="questionViewCtrl.user">My Answers: {{ quesiontViewCtrl.question.answers }}</answer-item>
 
   <create-answer question="questionViewCtrl.question"></create-answer>
 </section>
