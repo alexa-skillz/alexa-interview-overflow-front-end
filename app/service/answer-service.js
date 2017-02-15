@@ -109,15 +109,16 @@ function answerService($q, $log, $http, authService) {
 
       return $http.delete(url, config);
     })
-    .then( res => {
-      for (let i = 0; i < service.answers.length; i++) {
-        let current = service.answers[i];
-        if (current._id === answerID) {
-          service.question.answers.splice(i, 1);
-          break;
-        }
-      }
-    })
+    // .then( res => {
+    //   for (let i = 0; i < service.answers.length; i++) {
+    //     let current = service.answers[i];
+    //     console.log('current', current);
+    //     if (current._id === answerID) {
+    //       service.answers.indexOf(current, splice(i, 1);
+    //       break;
+    //     }
+    //   }
+    // })
     .catch( err => {
       $log.error(err.message);
       return $q.reject(err);
