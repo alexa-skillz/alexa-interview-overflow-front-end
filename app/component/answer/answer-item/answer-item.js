@@ -6,6 +6,7 @@ module.exports = {
   controllerAs: 'answerItemCtrl',
   bindings: {
     answer: '<',
+    user: '<'
   }
 };
 
@@ -26,5 +27,9 @@ function AnswerItemController($log, $stateParams, answerService) {
     answerService.downvoteAnswer($stateParams.id, this.answer._id);
   };
 
+  $log.log('::: this', this);
+  // $log.log('::: user.claim._id', this.user.claim._id);
+  // $log.log('::: answer.author._id', this.answer.author._id);
 
+// answerItemCtrl.user.claim._id = answerItemCtrl.answer.author._id
 }
