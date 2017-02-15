@@ -6,6 +6,7 @@ module.exports = {
   controllerAs: 'answerItemCtrl',
   bindings: {
     answer: '<',
+    user: '<'
   }
 };
 
