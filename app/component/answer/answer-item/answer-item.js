@@ -2,14 +2,14 @@
 
 module.exports = {
   template: require('./answer-item.html'),
-  controller: ['$log', 'answerService', AnswerItemController],
+  controller: ['$log', '$rootScope', 'answerService', AnswerItemController],
   controllerAs: 'answerItemCtrl',
   bindings: {
     answer: '<'
   }
 };
 
-function AnswerItemController($log, answerService) {
+function AnswerItemController($log, $rootScope, answerService) {
   $log.debug('QuestionItemController');
 
   this.showEditAnswer = false;
