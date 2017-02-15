@@ -17,7 +17,6 @@
     <edit-answer ng-if="answerItemCtrl.showEditAnswer &&  answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" answer="answerItemCtrl.answer"></edit-answer>
 
     <button class="delete-btn" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
-    <!-- <button class="delete-btn" ng-click="answerItemCtrl.deleteAnswer()">delete</button> -->
 
     <button class="edit-btn" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
     <ul>
