@@ -112,8 +112,9 @@ function answerService($q, $log, $http, authService) {
     .then( res => {
       for (let i = 0; i < service.answers.length; i++) {
         let current = service.answers[i];
+        console.log('current', current);
         if (current._id === answerID) {
-          service.question.answers.splice(i, 1);
+          service.answers.splice(i, 1);
           break;
         }
       }
