@@ -9,8 +9,6 @@
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "build-watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "test": "./node_modules/karma/bin/karma start --single-run",
-    "test-watch": "./node_modules/karma/bin/karma start",
     "lint": "eslint ./app/**/*.js ./app/*.js !node_modules"
   },
   "dependencies": {
@@ -28,6 +26,7 @@
     "clean-webpack-plugin": "^0.1.15",
     "css-loader": "^0.26.1",
     "dotenv": "^4.0.0",
+    "express": "^4.14.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
