@@ -101,17 +101,17 @@ function authService($q, $log, $http, $window){
     }
   };
 
-
   service.currentUserId = function() {
-    // if(service.isLoggedIn()) {
-    var token = service.getToken();
-    console.log('currentUserId', token);
-    var payload = JWT.read(token);
-    console.log('payload', payload);
-    console.log('payload.claim.username', payload.claim.username);
-    return payload.claim.username;
-    // }
+    return service.getToken()
+    .then( token => {
+      let userToken = token;
+
+      let payload = JWT.read(userToken);
+      console.log('payload', payload);
+      return payload;
+    });
   };
+
 
   return service;
 }

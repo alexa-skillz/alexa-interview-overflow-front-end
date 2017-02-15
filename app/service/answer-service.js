@@ -113,7 +113,7 @@ function answerService($q, $log, $http, authService) {
       for (let i = 0; i < service.answers.length; i++) {
         let current = service.answers[i];
         if (current._id === answerID) {
-          service.answers.splice(i, 1);
+          service.question.answers.splice(i, 1);
           break;
         }
       }
