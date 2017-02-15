@@ -1,22 +1,22 @@
 <section class="answer" ng-cloak>
   <div>{{ answerItemCtrl.answer.content }}</div>
   <div>
-    <span>
+    <!-- <span>
       <div class="btn-group" uib-dropdown>
-        <button id="split-button" type="button" class="btn btn-danger">Action</button>
+        <button id="split-button" type="button" class="btn btn-danger">Update | Delete</button>
         <button type="button" class="btn btn-danger" uib-dropdown-toggle>
           <span class="caret"></span>
           <span class="sr-only">Split button!</span>
         </button>
         <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
-          <li role="menuitem"><a href="#">Action</a></li>
-          <li role="menuitem"><a href="#">Another action</a></li>
-          <li role="menuitem"><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li role="menuitem"><a href="#">Separated link</a></li>
+          <li role="menuitem"><a href="#">UPDATE</a></li>
+          <li role="menuitem"><a href="#">DELETE</a></li>
         </ul>
       </div>
-    </span>
+    </span> -->
+    <edit-answer ng-if="answerItemCtrl.showEditAnswer" answer="answerItemCtrl.answer"></edit-answer>
+    <button class="delete-btn" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
+    <button class="edit-btn" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
     <ul>
       <li>{{ answerItemCtrl.answer.updated | date:'short' }}</li>
       <li>Author: {{ answerItemCtrl.answer.author.username }}</li>

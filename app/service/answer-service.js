@@ -62,7 +62,7 @@ function answerService($q, $log, $http, authService) {
     });
   };
 
-  service.updateAnswer = function(answerID, questionID, answerData) {
+  service.updateAnswer = function(questionID, answerID, answerData) {
     $log.debug('answerService.updateAnswer()');
 
     return authService.getToken()
@@ -95,7 +95,7 @@ function answerService($q, $log, $http, authService) {
     });
   };
 
-  service.deleteAnswer = function(answerID, questionID) {
+  service.deleteAnswer = function(questionID, answerID) {
     $log.debug('answerService.updateAnswer()');
 
     return authService.getToken()
@@ -124,7 +124,7 @@ function answerService($q, $log, $http, authService) {
     });
   };
 
-  service.upvoteAnswer = function(answerID, questionID, answerData) {
+  service.upvoteAnswer = function(questionID, answerID, answerData) {
     $log.debug('answerService.upvoteAnswer()');
     return authService.getToken()
     .then( token => {
@@ -158,7 +158,7 @@ function answerService($q, $log, $http, authService) {
     });
   };
 
-  service.downvoteAnswer = function(answerID, questionID, answerData) {
+  service.downvoteAnswer = function(questionID, answerID, answerData) {
     $log.debug('answerService.downvoteAnswer()');
     return authService.getToken()
     .then( token => {
