@@ -96,11 +96,11 @@ function answerService($q, $log, $http, authService) {
   };
 
   service.deleteAnswer = function(questionID, answerID) {
-    $log.debug('answerService.updateAnswer()');
+    $log.debug('answerService.deleteAnswer()');
 
     return authService.getToken()
     .then( token => {
-      let url = `${__API_URL__}/api/questions/${questionsID}/answers/${answerID}`;
+      let url = `${__API_URL__}/api/questions/${questionID}/answers/${answerID}`;
       let config = {
         headers: {
           Authorization: `Bearer ${token}`

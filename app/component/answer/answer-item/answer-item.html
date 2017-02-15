@@ -15,11 +15,21 @@
       </div>
     </span> -->
     <edit-answer ng-if="answerItemCtrl.showEditAnswer" answer="answerItemCtrl.answer"></edit-answer>
+
     <button class="delete-btn" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
+
     <button class="edit-btn" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
     <ul>
       <li>{{ answerItemCtrl.answer.updated | date:'short' }}</li>
       <li>Author: {{ answerItemCtrl.answer.author.username }}</li>
+      <p>Upvotes: {{ answerItemCtrl.answer.upvotes }}</p>
+      <p>Downvotes: {{ answerItemCtrl.answer.downvotes }}</p>
+      <a href="" ng-click="answerItemCtrl.upvoteAnswer(answer)">
+        <i class="fa fa-lg fa-thumbs-up"></i>
+      </a>
+      <a href="" ng-click="answerItemCtrl.downvoteAnswer(answer)">
+        <i class="fa fa-lg fa-thumbs-down"></i>
+      </a>
     </ul>
   </div>
 </section>
