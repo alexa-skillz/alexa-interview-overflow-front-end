@@ -95,19 +95,19 @@ function answerService($q, $log, $http, authService) {
     });
   };
 
-  service.deleteAnswer = function(questionID, answerID) {
+  service.deleteAnswer = function(questionID, answerID, answerData) {
     $log.debug('answerService.updateAnswer()');
 
     return authService.getToken()
     .then( token => {
-      let url = `${__API_URL__}/api/questions/${questionsID}/answers/${answerID}`;
+      let url = `${__API_URL__}/api/questions/${questionID}/answers/${answerID}`;
       let config = {
         headers: {
           Authorization: `Bearer ${token}`
         }
       };
 
-      return $http.delete(url, config);
+      return $http.delete(url, answerData, config);
     })
     .then( res => {
       for (let i = 0; i < service.answers.length; i++) {

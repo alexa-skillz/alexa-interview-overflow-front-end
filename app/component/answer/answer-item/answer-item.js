@@ -2,28 +2,29 @@
 
 module.exports = {
   template: require('./answer-item.html'),
-  controller: ['$log', 'answerService', AnswerItemController],
+  controller: ['$log', '$stateParams', 'answerService', AnswerItemController],
   controllerAs: 'answerItemCtrl',
   bindings: {
     answer: '<'
   }
 };
 
-function AnswerItemController($log, answerService) {
+function AnswerItemController($log, $stateParams, answerService) {
   $log.debug('QuestionItemController');
 
   this.showEditAnswer = false;
 
   this.deleteAnswer = function() {
-    answerService.deleteAnswer(this.answer._id);
+    answerService.deleteAnswer($stateParams.id, this.answer._id);
+    console.log('meow');
   };
 
   this.upvoteAnswer = function() {
-    answerService.upvoteAnswer(this.answer._id);
+    answerService.upvoteAnswer($stateParams.id, this.answer._id);
   };
 
   this.downvoteAnswer = function() {
-    answerService.downvoteAnswer(this.answer._id);
+    answerService.downvoteAnswer($stateParams.id, this.answer._id);
   };
 
 }

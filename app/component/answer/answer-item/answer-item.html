@@ -15,7 +15,9 @@
       </div>
     </span> -->
     <edit-answer ng-if="answerItemCtrl.showEditAnswer" answer="answerItemCtrl.answer"></edit-answer>
+
     <button class="delete-btn" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
+
     <button class="edit-btn" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
     <ul>
       <li>{{ answerItemCtrl.answer.updated | date:'short' }}</li>
