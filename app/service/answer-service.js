@@ -106,7 +106,7 @@ function answerService($q, $log, $http, authService) {
           Authorization: `Bearer ${token}`
         }
       };
-      
+
       return $http.delete(url, config);
     })
     .then( res => {
