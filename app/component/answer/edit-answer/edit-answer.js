@@ -9,7 +9,7 @@ module.exports = {
   }
 };
 
-function EditAnswerController($log, $stateParams, answerService, ) {
+function EditAnswerController($log, $stateParams, answerService) {
   $log.debug('EditAnswerController');
 
   this.updateAnswer = function() {

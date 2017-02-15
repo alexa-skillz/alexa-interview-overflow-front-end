@@ -95,8 +95,8 @@ function answerService($q, $log, $http, authService) {
     });
   };
 
-  service.deleteAnswer = function(questionID, answerID, answerData) {
-    $log.debug('answerService.updateAnswer()');
+  service.deleteAnswer = function(questionID, answerID) {
+    $log.debug('answerService.deleteAnswer()');
 
     return authService.getToken()
     .then( token => {
@@ -106,8 +106,8 @@ function answerService($q, $log, $http, authService) {
           Authorization: `Bearer ${token}`
         }
       };
-
-      return $http.delete(url, answerData, config);
+      
+      return $http.delete(url, config);
     })
     .then( res => {
       for (let i = 0; i < service.answers.length; i++) {

@@ -5,18 +5,17 @@ module.exports = {
   controller: ['$log', '$stateParams', 'answerService', AnswerItemController],
   controllerAs: 'answerItemCtrl',
   bindings: {
-    answer: '<'
+    answer: '<',
   }
 };
 
 function AnswerItemController($log, $stateParams, answerService) {
-  $log.debug('QuestionItemController');
+  $log.debug('AnswerItemController');
 
   this.showEditAnswer = false;
 
   this.deleteAnswer = function() {
     answerService.deleteAnswer($stateParams.id, this.answer._id);
-    console.log('meow');
   };
 
   this.upvoteAnswer = function() {
