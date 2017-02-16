@@ -13,7 +13,7 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService,
     questionService.getQuestionByID($stateParams.id)
     .then( question => {
       this.question = question;
-      console.log('QUESTION:', question);
+      $log.debug('QUESTION:', question);
     });
 
     authService.currentUserId()
@@ -29,7 +29,7 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService,
   });
 
   $rootScope.$on('broadcastEvent', () => {
-    $log.log('breadcastEvent');
+    $log.debug('breadcastEvent');
     this.displayQuestion();
   });
 

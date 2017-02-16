@@ -29,7 +29,7 @@ function NavBarController($log, $location, $rootScope, authService) {
   });
 
   this.logout = function() {
-    $log.log('navbarCtrl.logout()');
+    $log.debug('navbarCtrl.logout()');
 
     this.hideButtons = true;
     authService.logout()

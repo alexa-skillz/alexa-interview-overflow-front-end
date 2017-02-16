@@ -18,14 +18,14 @@ function authService($q, $log, $http, $window){
 
     $window.localStorage.setItem('token', _token);
     token = _token;
-    console.log('setToken', token);
+    $log.debug('setToken', token);
     return $q.resolve(token);
   }
 
   service.getToken = function(){
     $log.debug('authService.getToken');
     if (token) {
-      console.log('getToken', token);
+      $log.debug('getToken', token);
       return $q.resolve(token);
     }
 
@@ -55,7 +55,7 @@ function authService($q, $log, $http, $window){
 
     return $http.post(url, user, config)
     .then( res => {
-      $log.log('success', res.data.token);
+      $log.debug('success', res.data.token);
       return setToken(res.data.token);
     })
     .catch(err => {
@@ -80,7 +80,7 @@ function authService($q, $log, $http, $window){
 
     return $http.post(url, data, config)
     .then( res => {
-      $log.log('success', res.data.token);
+      $log.debug('success', res.data.token);
       return setToken(res.data.token);
     })
     .catch( err => {
@@ -91,10 +91,10 @@ function authService($q, $log, $http, $window){
 
   service.isLoggedIn = function() {
     var token = service.getToken();
-    console.log('isLoggedIn token', token);
+    $log.debug('isLoggedIn token', token);
     if (token) {
       var payload = JWT.read(token);
-      console.log('payload', payload);
+      $log.debug('payload', payload);
       return payload.exp > Date.now() / 1000;
     } else {
       return false;
@@ -107,7 +107,7 @@ function authService($q, $log, $http, $window){
       let userToken = token;
 
       let payload = JWT.read(userToken);
-      console.log('payload', payload);
+      $log.debug('payload', payload);
       return payload;
     });
   };

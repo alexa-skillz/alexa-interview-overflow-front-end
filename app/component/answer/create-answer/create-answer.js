@@ -2,11 +2,11 @@
 
 module.exports = {
   template: require('./create-answer.html'),
-  controller: ['$log', '$stateParams', '$rootScope', 'answerService', 'authService', CreateAnswerController],
+  controller: ['$log', '$stateParams', '$rootScope', 'answerService', CreateAnswerController],
   controllerAs: 'createAnswerCtrl',
 };
 
-function CreateAnswerController($log, $stateParams, $rootScope, answerService, authService) {
+function CreateAnswerController($log, $stateParams, $rootScope, answerService) {
   $log.debug('CreateAnswerController');
 
   this.answer = {};

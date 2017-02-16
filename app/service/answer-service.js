@@ -22,7 +22,7 @@ function answerService($q, $log, $http, authService) {
 
     return $http.get(url, config)
     .then( res => {
-      $log.log('answers retrieved', res);
+      $log.debug('answers retrieved', res);
       service.answers = res.data;
       return service.answers;
     })
@@ -109,16 +109,6 @@ function answerService($q, $log, $http, authService) {
 
       return $http.delete(url, config);
     })
-    // .then( res => {
-    //   for (let i = 0; i < service.answers.length; i++) {
-    //     let current = service.answers[i];
-    //     console.log('current', current);
-    //     if (current._id === answerID) {
-    //       service.answers.indexOf(current, splice(i, 1);
-    //       break;
-    //     }
-    //   }
-    // })
     .catch( err => {
       $log.error(err.message);
       return $q.reject(err);
@@ -129,7 +119,7 @@ function answerService($q, $log, $http, authService) {
     $log.debug('answerService.upvoteAnswer()');
     return authService.getToken()
     .then( token => {
-      console.log(token);
+      $log.debug(token);
       let url = `${__API_URL__}/api/questions/${questionID}/answers/${answerID}/upvote`;
       let config = {
         headers: {
@@ -163,7 +153,7 @@ function answerService($q, $log, $http, authService) {
     $log.debug('answerService.downvoteAnswer()');
     return authService.getToken()
     .then( token => {
-      console.log(token);
+      $log.debug(token);
       let url = `${__API_URL__}/api/questions/${questionID}/answers/${answerID}/downvote`;
       let config = {
         headers: {
