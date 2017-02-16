@@ -15,18 +15,25 @@
     padding-top: 8px;
   }
 
+  li a {
+    white-space: nowrap;
+  }
+
   .logo-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 3vw;
+    // font-size: largest;
     text-transform: uppercase;
   }
 
   .signout-container {
+    font-size: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    // background: orange;
   }
 
   .signout-container li {
@@ -35,8 +42,18 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .nav {
+  nav {
     width: 96%;
-    background: yellow;
+    // background: yellow;
+  }
+
+  .logo-container span {
+    font-size: 16px;
+    // background: pink;
+  }
+
+  .signout-container li {
+    font-size: 12px;
+    // background: pink;
   }
 }

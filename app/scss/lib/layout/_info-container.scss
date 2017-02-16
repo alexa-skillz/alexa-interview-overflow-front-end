@@ -5,7 +5,8 @@
 }
 
 @mixin info-content {
-  font-size: 1vw;
+  // font-size: 1vw;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -15,19 +16,25 @@
 
 .author {
   @include info-content;
+  // margin-left: $gutter-sm;
 }
 
 .votes {
   @include info-content;
+  // margin-right: 2vw;
 }
 
 .numanswers {
   @include info-content;
-  margin-right: 2vw;
+  margin-right: $gutter-sm;
 }
 
 .edit-delete-buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+.info-container-left {
+  margin-right: $gutter-std;
 }
