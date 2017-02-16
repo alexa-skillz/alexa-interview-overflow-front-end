@@ -26,11 +26,14 @@
       </div>
     </div>
 
-    <edit-answer ng-if="answerItemCtrl.showEditAnswer && answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" answer="answerItemCtrl.answer"></edit-answer>
+    <div class="edit-delete-buttons">
 
-    <button class="button" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
+      <edit-answer ng-if="answerItemCtrl.showEditAnswer && answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" answer="answerItemCtrl.answer"></edit-answer>
 
-    <button class="button" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
+      <button class="button-small" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
+
+      <button class="button-small" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
+    </div>
 
   </div>
 </section>

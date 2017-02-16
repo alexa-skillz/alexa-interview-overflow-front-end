@@ -45,3 +45,10 @@
   @include info-content;
   margin-right: 2vw;
 }
+
+.edit-delete-buttons {
+  // background: yellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

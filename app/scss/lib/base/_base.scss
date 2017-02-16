@@ -51,6 +51,21 @@ a {
   }
 }
 
+.button-small {
+  width: 10vw;
+  height: 2vw;
+  border: none;
+  background: $ltgray;
+  // display: block;
+  margin: $gutter-sm 0 $gutter-sm 2vw;
+  // padding: 3% 0 3% 0
+  font-size: 1.2vw;
+
+  &:hover {
+    background: $orange;
+  }
+}
+
 // .div {
 //   margin: $gutter-sm 0;
 // }
