@@ -9,24 +9,30 @@ module.exports = {
 function NavBarController($log, $location, $rootScope, authService) {
   $log.debug('NavBarController');
 
+  this.authenticationStatus = false;
+
   this.checkPath = function() {
     let path = $location.path();
 
     if(path === '/join') this.hideButtons = true;
-    if(path !== '/join') {
-      this.hideButtons = false;
-      authService.getToken()
-      .catch( () => {
-        $location.url('/join#login');
-      });
-    }
   };
 
   this.checkPath();
 
-  $rootScope.$on('$locationChangeSuccess', () => {
-    this.checkPath();
-  });
+  this.authentication = function() {
+    authService.isLoggedIn()
+    .then( payload => {
+      if (payload) {
+        return this.authenticationStatus = true;
+      } else {
+        return this.authenticationStatus = false;
+      }
+    });
+  };
+
+  this.authentication();
+
+  console.log('this.authenticationStatus ======== ', this.authenticationStatus);
 
   this.logout = function() {
     $log.debug('navbarCtrl.logout()');
@@ -37,4 +43,9 @@ function NavBarController($log, $location, $rootScope, authService) {
       $location.url('/');
     });
   };
+
+  $rootScope.$on('$locationChangeSuccess', () => {
+    this.checkPath();
+    this.authentication();
+  });
 }
