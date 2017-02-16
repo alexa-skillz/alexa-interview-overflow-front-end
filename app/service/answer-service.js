@@ -8,32 +8,6 @@ function answerService($q, $log, $http, authService) {
   let service = {};
   service.answers = [];
 
-  // MAY NOT NEED SINCE WE DONT DISPLAY A LIST OF ANSWERS SEPERATE FROM THE QUESTIONS
-  service.getAnswers = function() {
-    $log.debug('inside of service.getAnswers()');
-
-    let url = `${__API_URL__}/api/answers`;
-    let config = {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
-    };
-
-    return $http.get(url, config)
-    .then( res => {
-      $log.log('answers retrieved', res);
-      service.answers = res.data;
-      return service.answers;
-    })
-    .catch( err => {
-      $log.error(err.message);
-      return $q.reject(err);
-    });
-
-  };
-  // END OF getAnswers function
-
   service.createAnswer = function(questionID, answer) {
     $log.debug('inside of service.createAnswer()');
 
@@ -109,16 +83,6 @@ function answerService($q, $log, $http, authService) {
 
       return $http.delete(url, config);
     })
-    // .then( res => {
-    //   for (let i = 0; i < service.answers.length; i++) {
-    //     let current = service.answers[i];
-    //     console.log('current', current);
-    //     if (current._id === answerID) {
-    //       service.answers.indexOf(current, splice(i, 1);
-    //       break;
-    //     }
-    //   }
-    // })
     .catch( err => {
       $log.error(err.message);
       return $q.reject(err);
@@ -129,7 +93,7 @@ function answerService($q, $log, $http, authService) {
     $log.debug('answerService.upvoteAnswer()');
     return authService.getToken()
     .then( token => {
-      console.log(token);
+      $log.debug(token);
       let url = `${__API_URL__}/api/questions/${questionID}/answers/${answerID}/upvote`;
       let config = {
         headers: {
@@ -163,7 +127,7 @@ function answerService($q, $log, $http, authService) {
     $log.debug('answerService.downvoteAnswer()');
     return authService.getToken()
     .then( token => {
-      console.log(token);
+      $log.debug(token);
       let url = `${__API_URL__}/api/questions/${questionID}/answers/${answerID}/downvote`;
       let config = {
         headers: {

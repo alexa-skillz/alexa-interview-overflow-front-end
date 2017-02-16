@@ -6,6 +6,7 @@ function routerConfig($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.when('/register' , '/join#register');
   $urlRouterProvider.when('/login' , '/join#login');
   $urlRouterProvider.when('/user' , '/user');
+  $urlRouterProvider.when('', '/');
 
   let states = [
     {

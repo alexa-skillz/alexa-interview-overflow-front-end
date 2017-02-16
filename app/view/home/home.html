@@ -1,15 +1,12 @@
 <section class="home" ng-cloak>
-  <create-question></create-question>
+  <create-question ng-if="homeCtrl.authenticationStatus"></create-question>
   <input ng-model="homeCtrl.questionSearchTerm" type="text" placeholder="search a question">
   <h2>questions</h2>
   <div class="home-div">
   <h2 class="color-questions">questions</h2>
   <div>
     <ul>
-      <question-item ng-repeat="item in homeCtrl.questions | questionSearch: homeCtrl.questionSearchTerm | orderBy: '-(upvotes - downvotes)'"
-        question="item"
-        delete-done="homeCtrl.questionDeleteDone(questionData)"
-        ng-click="homeCtrl.currentQuestion = item">
+      <question-item ng-repeat="question in homeCtrl.questions | questionSearch: homeCtrl.questionSearchTerm | orderBy: '-(upvotes - downvotes)'" question="question">
       </question-item>
     </ul>
   </div>

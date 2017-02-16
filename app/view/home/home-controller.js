@@ -1,12 +1,12 @@
 'use strict';
 
-module.exports = ['$log', '$rootScope', 'questionService', 'answerService', HomeController];
+module.exports = ['$log', '$rootScope', 'questionService', 'authService', HomeController];
 
-function HomeController($log, $rootScope, questionService, answerService) {
+function HomeController($log, $rootScope, questionService, authService) {
   $log.debug('inside HomeController');
 
   this.questions = [];
-  this.answers = [];
+  this.authenticationStatus = false;
 
   this.showQuestions = function() {
     questionService.getQuestions()
@@ -17,17 +17,21 @@ function HomeController($log, $rootScope, questionService, answerService) {
 
   this.showQuestions();
 
-  this.showAnswers = function() {
-    answerService.getAnswers()
-    .then(answers => {
-      this.answers = answers;
+  this.authentication = function() {
+    authService.isLoggedIn()
+    .then( payload => {
+      if (payload) {
+        return this.authenticationStatus = true;
+      } else {
+        return this.authenticationStatus = false;
+      }
     });
   };
 
-  this.showAnswers();
+  this.authentication();
 
   $rootScope.$on('$locationChangeSuccess', () => {
     this.showQuestions();
-    this.showAnswers();
+    this.authentication();
   });
 }
