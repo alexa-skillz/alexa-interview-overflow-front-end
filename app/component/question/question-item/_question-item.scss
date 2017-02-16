@@ -1,1 +1,10 @@
-// placeholder
+@import "../../../scss/lib/layout/info-container";
+
+.question-item {
+  margin-bottom: $gutter-std * 4;
+
+  .single-question {
+    font-size: 1.8vw;
+    margin-bottom: 1vw;
+  }
+}

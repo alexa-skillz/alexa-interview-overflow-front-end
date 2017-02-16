@@ -1,0 +1,33 @@
+.info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@mixin info-content {
+  font-size: 1vw;
+  text-transform: uppercase;
+}
+
+.date {
+  @include info-content;
+}
+
+.author {
+  @include info-content;
+}
+
+.votes {
+  @include info-content;
+}
+
+.numanswers {
+  @include info-content;
+  margin-right: 2vw;
+}
+
+.edit-delete-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

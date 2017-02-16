@@ -1,14 +1,14 @@
-<section class="edit">
-  <form class="edit-answer"
+<section class="edit-answer">
+  <form
     name="editAnswer"
     ng-submit="editAnswerCtrl.updateAnswer()"
     novalidate>
 
     <fieldset>
-      <span class="item-label-name">content:</span>
-      <input name="content" class="name-input" ng-model="editAnswerCtrl.answer.content">
+      <span>content:</span>
+      <input class="input" name="content" ng-model="editAnswerCtrl.answer.content">
     </fieldset>
 
-    <button type="submit" class="btn-std">update</button>
+    <button class="button" type="submit">update</button>
   </form>
 </section>

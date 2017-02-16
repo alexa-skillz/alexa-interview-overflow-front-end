@@ -1,0 +1,11 @@
+@import "../../../scss/lib/layout/info-container";
+
+.answer-item {
+  margin-bottom: $gutter-std * 4;
+
+  .single-answer {
+    font-size: 1.6vw;
+    font-weight: 100;
+    margin-bottom: 1vw;
+  }
+}
