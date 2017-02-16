@@ -3,7 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
     padding: $gutter-std 0;
     margin: 0 auto $gutter-std auto;
   }
@@ -15,6 +14,10 @@
     padding-top: 8px;
   }
 
+  li a {
+    white-space: nowrap;
+  }
+
   .logo-container {
     display: flex;
     flex-direction: row;
@@ -24,6 +27,7 @@
   }
 
   .signout-container {
+    font-size: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -31,5 +35,19 @@
 
   .signout-container li {
     margin-left: $gutter-std;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  nav {
+    width: 96%;
+  }
+
+  .logo-container span {
+    font-size: 16px;
+  }
+
+  .signout-container li {
+    font-size: 12px;
   }
 }
