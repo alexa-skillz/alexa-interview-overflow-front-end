@@ -1,11 +1,28 @@
+// @import "../../../scss/lib/theme/font-control";
+
 * {
-  outline: 1px orange solid;
+  // outline: 1px orange solid;
 }
 
-html, body {
+html {
   width: 100%;
   font-family: $font-std;
   font-size: 1.5vw;
+  // @include responsive-font(3vw, 20px, 50px);
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+  // background: pink;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    width: 96%;
+    // margin: 0 auto;
+    // background: orange;
+  }
 }
 
 h2 {
