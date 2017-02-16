@@ -2,28 +2,25 @@
 
   <p class="single-answer">{{ answerItemCtrl.answer.content }}</p>
 
-  <div>
-    <div class="info-container">
-      <div class="info-container-left">
-        <span class="votes">upvotes: {{ answerItemCtrl.answer.upvotes }}</span>
-        <a href="" ng-click="answerItemCtrl.upvoteAnswer(answer)"><i class="fa fa-lg fa-thumbs-up hover-answers-icons"></i></a>
-      </div>
-      <div class="info-container-right">
-        <span class="author">answered by {{ answerItemCtrl.answer.author.username }}</span>
-        <span class="date"> on {{ answerItemCtrl.answer.updated | date:'short' }}</span>
-      </div>
+  <edit-answer ng-if="answerItemCtrl.showEditAnswer && answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" answer="answerItemCtrl.answer"></edit-answer>
+
+  <div class="info-container">
+    <div class="info-container-left">
+      <span class="votes">upvotes: {{ answerItemCtrl.answer.upvotes }}</span>
+      <a href="" ng-click="answerItemCtrl.upvoteAnswer(answer)"><i class="fa fa-lg fa-thumbs-up hover-answers-icons"></i></a>
     </div>
+    <div class="info-container-right">
+      <span class="author">answered by {{ answerItemCtrl.answer.author.username }}</span>
+      <span class="date"> on {{ answerItemCtrl.answer.updated | date:'short' }}</span>
+    </div>
+  </div>
 
-    <div class="edit-delete-buttons">
-      <edit-answer ng-if="answerItemCtrl.showEditAnswer && answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" answer="answerItemCtrl.answer"></edit-answer>
-
+  <div class="edit-delete-buttons">
     <div ng-if="!answerItemCtrl.showEditAnswer">
+      <button class="button-small hover-answers" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
 
-        <button class="button-small hover-answers" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
-
-        <button class="button-small hover-answers" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
-      </div>
+      <button class="button-small hover-answers" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
     </div>
+  </div>
 
-  <!-- </div> -->
 </section>

@@ -1,8 +1,8 @@
 <section class="question-item" ng-cloak>
 
-  <!-- <div ng-if="!questionItemCtrl.showEditQuestion"> -->
-
   <p class="single-question"><a href="/#!/questions/{{ questionItemCtrl.question._id }}">{{ questionItemCtrl.question.content }}</a></p>
+
+  <edit-question ng-if="questionItemCtrl.showEditQuestion && questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" question="questionItemCtrl.question"></edit-question>
 
   <div class="info-container">
     <div class="info-container-left">
@@ -16,19 +16,12 @@
     </div>
   </div>
 
-  <!-- </div> -->
-
-
   <div class="edit-delete-buttons">
-    <edit-question ng-if="questionItemCtrl.showEditQuestion && questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" question="questionItemCtrl.question"></edit-question>
+    <div ng-if="!questionItemCtrl.showEditQuestion">
+      <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
 
-  <div ng-if="!questionItemCtrl.showEditQuestion">
-
-    <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
-
-    <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
+      <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
+    </div>
   </div>
-
-</div>
 
 </section>
