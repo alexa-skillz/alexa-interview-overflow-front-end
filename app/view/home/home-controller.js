@@ -6,7 +6,6 @@ function HomeController($log, $rootScope, questionService, authService) {
   $log.debug('inside HomeController');
 
   this.questions = [];
-  this.answers = [];
   this.authenticationStatus = false;
 
   this.showQuestions = function() {
@@ -21,15 +20,18 @@ function HomeController($log, $rootScope, questionService, authService) {
   this.authentication = function() {
     authService.isLoggedIn()
     .then( payload => {
-      if (payload === false) {
-        return this.authenticationStatus = false;
-      } else {
+      if (payload) {
         return this.authenticationStatus = true;
+      } else {
+        return this.authenticationStatus = false;
       }
     });
   };
 
+  this.authentication();
+
   $rootScope.$on('$locationChangeSuccess', () => {
     this.showQuestions();
+    this.authentication();
   });
 }

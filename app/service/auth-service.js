@@ -96,7 +96,8 @@ function authService($q, $log, $http, $window){
       if (token) {
         var payload = JWT.read(token);
         $log.debug('payload', payload);
-        return payload.exp > Date.now() / 1000;
+        payload.exp > Date.now() / 1000;
+        return payload;
       } else {
         return false;
       }

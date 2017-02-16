@@ -1,5 +1,5 @@
 <section class="home" ng-cloak>
-  <create-question></create-question>
+  <create-question ng-if="homeCtrl.authenticationStatus"></create-question>
   <h2 class="color-questions">questions</h2>
   <div>
     <ul>
