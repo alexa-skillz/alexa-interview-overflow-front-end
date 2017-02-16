@@ -54,6 +54,15 @@ a {
   font-size: small;
 }
 
+.textarea {
+  border-color: $ltgray;
+  box-sizing: border-box;
+  width: 40vw;
+  margin: $gutter-sm 0;
+  padding: 0 0 0 .5vw;
+  font-size: small;
+}
+
 .button {
   box-sizing: border-box;
   width: 40vw;
