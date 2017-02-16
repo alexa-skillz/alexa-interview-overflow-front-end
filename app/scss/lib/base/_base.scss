@@ -12,6 +12,8 @@ h2 {
   padding: $gutter-sm 0;
   font-weight: 700;
   font-size: 2vw;
+  text-transform: uppercase;
+  color: $medgray;
 }
 
 a {
@@ -80,6 +82,14 @@ a {
 
 .bold {
   font-weight: bold;
+}
+
+.color-questions {
+  color: $orange;
+}
+
+.color-answers {
+  color: $teal;
 }
 
 .clearfix {

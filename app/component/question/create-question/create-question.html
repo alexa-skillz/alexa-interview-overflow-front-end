@@ -1,11 +1,13 @@
 <section class="create-question">
-  <h2>create a new question</h2>
+  <h2 class="color-questions">create a new question</h2>
   <form name="createQuestionForm"
     ng-submit="createQuestionCtrl.createQuestion()">
 
     <fieldset>
       <label for="content"></label><input class="input" name="content" type="text" ng-model="createQuestionCtrl.question.content" required><button class="button" type="submit">create question</button>
     </fieldset>
+
+    <!-- <div class="divider-orange"></div> -->
 
   </form>
 </section>

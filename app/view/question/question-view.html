@@ -1,7 +1,9 @@
 <section class="question-view" ng-cloak>
-  <h2>here's your question</h2>
+  <h2 class="color-questions">here's your question</h2>
 
   <question-item question="questionViewCtrl.question"></question-item>
+
+  <h2 class="color-answers">answers</h2>
 
   <answer-item ng-repeat="answer in questionViewCtrl.question.answers" answer="answer" user="questionViewCtrl.user"></answer-item>
 

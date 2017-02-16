@@ -3,11 +3,11 @@
 .question-item {
   // background: yellow;
   // border: 1px solid $ltgray;
-  margin-bottom: 5vw;
+  margin-bottom: $gutter-std * 4;
 
-  span {
-    // border: 1px dotted $ltgray;
-  }
+  // span {
+  //   // border: 1px dotted $ltgray;
+  // }
 
   .single-question {
     font-size: 1.8vw;
