@@ -8,9 +8,10 @@ html, body {
   font-size: 1.5vw;
 }
 
-main {
-  width: 80%;
-  margin: 0 auto;
+h2 {
+  padding: $gutter-sm 0;
+  font-weight: 700;
+  font-size: 2vw;
 }
 
 a {
@@ -22,45 +23,50 @@ a {
   }
 }
 
-input {
-  box-sizing: border-box;
-  width: 50%;
-  height: 2vw;
-}
-
-button {
+.input {
   box-sizing: border-box;
   // width: 50%;
+  width: 40vw;
+  height: 2vw;
+  margin: $gutter-sm 0;
+  padding: 0 0 0 .5vw;
+  // padding: 3% 0;
+  font-size: 1.2vw;
+}
+
+.button {
+  box-sizing: border-box;
+  // width: 50%;
+  width: 40vw;
   height: 2vw;
   border: none;
   background: $ltgray;
   display: block;
+  margin: $gutter-sm 0;
+  // padding: 3% 0 3% 0
+  font-size: 1.2vw;
 
   &:hover {
     background: $orange;
   }
 }
 
-h2 {
-  padding: $gutter-sm 0;
-}
+// .div {
+//   margin: $gutter-sm 0;
+// }
+//
+// .span {
+//   padding: $gutter-sm 0;
+// }
+//
+// .li {
+//   padding: $gutter-sm 0;
+// }
 
-div {
-  margin: $gutter-sm 0;
-}
-
-span {
-  // padding: $gutter-sm 0;
-}
-
-li {
-  padding: $gutter-sm 0;
+.bold {
+  font-weight: bold;
 }
 
 .clearfix {
   clear: both;
-}
-
-.bold {
-  font-weight: bold;
 }

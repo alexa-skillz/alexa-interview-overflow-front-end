@@ -1,24 +1,26 @@
 <section class="question-item" ng-cloak>
 
   <li>
-    <div class="current-item" ng-if="!questionItemCtrl.showEditQuestion">
-        <p><a href="/#!/questions/{{ questionItemCtrl.question._id }}">{{ questionItemCtrl.question.content }}</a></p>
-        <p>Upvotes: {{ questionItemCtrl.question.upvotes }}</p>
-        <p>Downvotes: {{ questionItemCtrl.question.downvotes }}</p>
-        <p>Answers: {{ questionItemCtrl.question.answers.length }}</p>
-        <p>Asked on: {{ questionItemCtrl.question.created | date:"MM/dd/yyyy 'at' h:mma" }}</p>
-        <p>Updated: {{ questionItemCtrl.question.updated | date:"MM/dd/yyyy 'at' h:mma" }}</p>
-        <p>Author: {{ questionItemCtrl.question.author.username }}</p>
+    <div ng-if="!questionItemCtrl.showEditQuestion">
+      <p><a href="/#!/questions/{{ questionItemCtrl.question._id }}">{{ questionItemCtrl.question.content }}</a></p>
+      <div class="question-info">
+        <span>answers: {{ questionItemCtrl.question.answers.length }}</span>
+        <span>asked on: {{ questionItemCtrl.question.created | date:"MM/dd/yyyy 'at' h:mma" }}</span>
+        <!-- <span>updated: {{ questionItemCtrl.question.updated | date:"MM/dd/yyyy 'at' h:mma" }}</span> -->
+        <span>author: {{ questionItemCtrl.question.author.username }}</span>
+        <span>upvotes: {{ questionItemCtrl.question.upvotes }}</span>
+        <!-- <span>downvotes: {{ questionItemCtrl.question.downvotes }}</span> -->
         <a href="" ng-click="questionItemCtrl.upvoteQuestion(question)">
           <i class="fa fa-lg fa-thumbs-up"></i>
         </a>
-        <a href="" ng-click="questionItemCtrl.downvoteQuestion(question)">
+        <!-- <a href="" ng-click="questionItemCtrl.downvoteQuestion(question)">
           <i class="fa fa-lg fa-thumbs-down"></i>
-        </a>
-    </div>
+        </a> -->
+      </div>
+  </div>
 
-    <edit-question ng-if="questionItemCtrl.showEditQuestion" question="questionItemCtrl.question"></edit-question>
+  <edit-question ng-if="questionItemCtrl.showEditQuestion" question="questionItemCtrl.question"></edit-question>
   </li>
-  <button class="delete-btn" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
-  <button class="edit-btn" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
+  <button class="button" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
+  <button class="button" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
 </section>

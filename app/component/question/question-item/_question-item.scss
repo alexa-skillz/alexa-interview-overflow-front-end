@@ -1,1 +1,15 @@
-// placeholder
+.question-item {
+  // background: yellow;
+  border: 1px solid $ltgray;
+
+  span {
+    border: 1px dotted $ltgray;
+  }
+
+  .question-info {
+    // background: red;
+    display: flex;
+    align-items: flex-end;
+  }
+
+}
