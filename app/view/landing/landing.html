@@ -5,9 +5,16 @@
     <div class="join-inner">
       <signup></signup>
       <div class="clearfix"></div>
+
+      <div class="oauth-container">
+        <a ng-submit="loginCtrl.login()" href="http://127.0.0.1:8000/auth/twitter/" class="btn btn-info"><span class="fa fa-twitter"></span>Twitter</a>
+        <a href="http://127.0.0.1:8000/auth/google/" class="btn btn-danger"><span class="fa fa-google-plus"></span>Google</a>
+        <a href="http://127.0.0.1:8000/auth/amazon/" class="btn btn-warning"><span class="fa fa-amazon"></span>Amazon</a>
+      </div>
+
       <span class="sign-container">
         <span>already a member?</span>
-        <a href="/#/join#login"
+        <a href="/#!/join#login"
           ng-click="landingCtrl.showSignup=false">
           <span class="bold">sign in here.</span>
         </a>
@@ -20,16 +27,21 @@
     <div class="join-inner">
       <login></login>
       <div class="clearfix"></div>
+
+      <div class="oauth-container">
+        <a ng-submit="loginCtrl.login()" href="http://127.0.0.1:8000/auth/twitter/" class="btn btn-info"><span class="fa fa-twitter"></span>Twitter</a>
+        <a href="http://127.0.0.1:8000/auth/google/" class="btn btn-danger"><span class="fa fa-google-plus"></span>Google</a>
+        <a href="http://127.0.0.1:8000/auth/amazon/" class="btn btn-warning"><span class="fa fa-amazon"></span>Amazon</a>
+      </div>
+
       <span class="sign-container">
         <span>want to signup?</span>
-        <a href="/#/join#signup"
+        <a href="/#!/join#signup"
           ng-click="landingCtrl.showSignup=true">
           <span class="bold">sign up here.</span>
         </a>
       </span>
     </div>
   </div>
-  <a ng-submit="loginCtrl.login()" href="http://127.0.0.1:8000/auth/twitter/" class="btn btn-info"><span class="fa fa-twitter"></span>Twitter</a>
-  <a href="http://127.0.0.1:8000/auth/google/" class="btn btn-danger"><span class="fa fa-google-plus"></span>Google</a>
-  <a href="http://127.0.0.1:8000/auth/amazon/" class="btn btn-warning"><span class="fa fa-amazon"></span>Amazon</a>
+
 </section>

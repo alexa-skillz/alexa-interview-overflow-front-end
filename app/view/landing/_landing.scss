@@ -12,4 +12,12 @@
   .bold {
     padding-left: $gutter-sm;
   }
+
+  .oauth-container {
+    margin: 0 0 $gutter-std 0;
+
+    a {
+      margin-right: $gutter-sm;
+    }
+  }
 }
