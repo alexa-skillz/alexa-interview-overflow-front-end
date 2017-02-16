@@ -1,5 +1,5 @@
 * {
-  // outline: 1px orange solid;
+  outline: 1px orange solid;
 }
 
 html, body {
@@ -21,6 +21,14 @@ a {
   color: $link-std;
 
   &:hover {
+    color: $orange;
+  }
+
+  &:active {
+    color: $orange;
+  }
+
+  &:focus {
     color: $orange;
   }
 }
@@ -76,7 +84,7 @@ a {
   }
 }
 
-.hover-icons {
+.hover-answers-icons {
   &:hover {
     color: $teal;
   }
