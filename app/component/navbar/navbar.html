@@ -10,7 +10,8 @@
       <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()"><a href="#">sign out</a></li>
     </ul>
     <ul class="signout-container" ng-if="!navbarCtrl.authenticationStatus">
-      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()"><a href="/#!/join#register">sign up</a></li>
+      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()"><a href="/#!/join#signup">sign up</a></li>
+      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()"><a href="/#!/join#login">sign in</a></li>
     </ul>
   </nav>
 </section>
