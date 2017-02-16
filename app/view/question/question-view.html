@@ -7,5 +7,5 @@
 
   <answer-item ng-repeat="answer in questionViewCtrl.question.answers" answer="answer" user="questionViewCtrl.user"></answer-item>
 
-  <create-answer question="questionViewCtrl.question"></create-answer>
+  <create-answer question="questionViewCtrl.question" ng-if="questionViewCtrl.authenticationStatus"></create-answer>
 </section>

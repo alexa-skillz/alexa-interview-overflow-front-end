@@ -22,7 +22,7 @@ function questionService($q, $log, $http, authService) {
 
     return $http.get(url, config)
     .then( res => {
-      $log.log('questions retrieved', res);
+      $log.debug('questions retrieved', res);
       service.questions = res.data;
       return service.questions;
     })
@@ -50,10 +50,10 @@ function questionService($q, $log, $http, authService) {
       return $http.post(url, question, config);
     })
     .then( res => {
-      $log.log('question created');
+      $log.debug('question created');
       let question = res.data;
       service.questions.unshift(question);
-      console.log(question);
+      $log.debug(question);
       return question;
     })
     .catch( err => {
@@ -128,7 +128,7 @@ function questionService($q, $log, $http, authService) {
     $log.debug('questionService.upvoteQuestion()');
     return authService.getToken()
     .then( token => {
-      console.log(token);
+      $log.debug(token);
       let url = `${__API_URL__}/api/questions/${questionID}/upvote`;
       let config = {
         headers: {
@@ -162,7 +162,7 @@ function questionService($q, $log, $http, authService) {
     $log.debug('questionService.downvoteQuestion()');
     return authService.getToken()
     .then( token => {
-      console.log(token);
+      $log.debug(token);
       let url = `${__API_URL__}/api/questions/${questionID}/downvote`;
       let config = {
         headers: {
@@ -204,7 +204,7 @@ function questionService($q, $log, $http, authService) {
 
     return $http.get(url, config)
     .then( res => {
-      $log.log('question retrieved', res);
+      $log.debug('question retrieved', res);
       service.questions = res.data;
       return service.questions;
     });

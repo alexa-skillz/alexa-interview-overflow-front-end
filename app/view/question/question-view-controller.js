@@ -7,13 +7,14 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService,
 
   this.question = null;
   this.user = null;
+  this.authenticationStatus = false;
 
   this.displayQuestion = function() {
 
     questionService.getQuestionByID($stateParams.id)
     .then( question => {
       this.question = question;
-      console.log('QUESTION:', question);
+      $log.debug('QUESTION:', question);
     });
 
     authService.currentUserId()
@@ -24,33 +25,28 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService,
 
   this.displayQuestion();
 
+  this.authentication = function() {
+    authService.isLoggedIn()
+    .then( payload => {
+      if (payload) {
+        return this.authenticationStatus = true;
+      } else {
+        return this.authenticationStatus = false;
+      }
+    });
+  };
+
+  this.authentication();
+
   $rootScope.$on('$locationChangeSuccess', () => {
     this.displayQuestion();
+    this.authentication();
   });
 
-  $rootScope.$on('addAnswer', () => {
-    $log.log('run the add answer');
+  $rootScope.$on('broadcastEvent', () => {
+    $log.debug('breadcastEvent');
     this.displayQuestion();
-  });
-
-  $rootScope.$on('deleteAnswer', () => {
-    $log.log('run the delete answer');
-    this.displayQuestion();
-  });
-
-  $rootScope.$on('upvoteAnswer', () => {
-    $log.log('run the upvote answer');
-    this.displayQuestion();
-  });
-
-  $rootScope.$on('downvoteAnswer', () => {
-    $log.log('run the down answer');
-    this.displayQuestion();
-  });
-
-  $rootScope.$on('editAnswer', () => {
-    $log.log('run the edit answer');
-    this.displayQuestion();
+    this.authentication();
   });
 
 }
