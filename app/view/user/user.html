@@ -1,0 +1,10 @@
+<section class="user-view" ng-cloak>
+  <h2 class="color-users">user</h2>
+
+  <user-item user="userViewCtrl.user"></user-item>
+
+  <h2 class="color-users">users</h2>
+
+  <user-item ng-repeat="user in userViewCtrl.user.users" user="user" user="userViewCtrl.user"></user-item>
+
+</section>
