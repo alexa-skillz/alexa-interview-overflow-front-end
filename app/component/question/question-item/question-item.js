@@ -2,7 +2,7 @@
 
 module.exports = {
   template: require('./question-item.html'),
-  controller: ['$log', 'questionService', 'authService', QuestionItemController],
+  controller: ['$log', '$location', 'questionService', 'authService', QuestionItemController],
   controllerAs: 'questionItemCtrl',
   bindings: {
     question: '<',
@@ -10,7 +10,7 @@ module.exports = {
   }
 };
 
-function QuestionItemController($log, questionService, authService) {
+function QuestionItemController($log, $location, questionService, authService) {
   $log.debug('QuestionItemController');
 
   this.showEditQuestion = false;
@@ -31,5 +31,17 @@ function QuestionItemController($log, questionService, authService) {
   this.downvoteQuestion = function() {
     questionService.downvoteQuestion(this.question._id);
   };
+
+  // added
+
+  this.checkQuestionPath = function() {
+    let path = $location.path();
+    // if(path === `/questions/${questionID}/answers/${answerID}`) this.hideLink = true;
+    // if(path === '/questions/') this.hideLink = true;
+    if(path === '/questions/',$location) this.hideLink = true;
+    if(path === '/questions/',$location) $log.log('::::::::::::: yup');
+  };
+
+  this.checkQuestionPath();
 
 }

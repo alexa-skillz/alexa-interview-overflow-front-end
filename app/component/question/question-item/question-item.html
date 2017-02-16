@@ -2,7 +2,7 @@
 
   <li>
     <div class="current-item" ng-if="!questionItemCtrl.showEditQuestion">
-        <p><a href="/#!/questions/{{ questionItemCtrl.question._id }}">{{ questionItemCtrl.question.content }}</a></p>
+        <p><a href="/#!/questions/{{ questionItemCtrl.question._id }}" ng-hide="questionItemCtrl.hideLink">{{ questionItemCtrl.question.content }}</a></p>
         <p>Upvotes: {{ questionItemCtrl.question.upvotes }}</p>
         <p>Downvotes: {{ questionItemCtrl.question.downvotes }}</p>
         <p>Answers: {{ questionItemCtrl.question.answers.length }}</p>
