@@ -7,6 +7,7 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService,
 
   this.question = null;
   this.user = null;
+  this.authenticationStatus = false;
 
   this.displayQuestion = function() {
 
@@ -24,13 +25,28 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService,
 
   this.displayQuestion();
 
+  this.authentication = function() {
+    authService.isLoggedIn()
+    .then( payload => {
+      if (payload) {
+        return this.authenticationStatus = true;
+      } else {
+        return this.authenticationStatus = false;
+      }
+    });
+  };
+
+  this.authentication();
+
   $rootScope.$on('$locationChangeSuccess', () => {
     this.displayQuestion();
+    this.authentication();
   });
 
   $rootScope.$on('broadcastEvent', () => {
     $log.debug('breadcastEvent');
     this.displayQuestion();
+    this.authentication();
   });
 
 }
