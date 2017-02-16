@@ -8,32 +8,6 @@ function answerService($q, $log, $http, authService) {
   let service = {};
   service.answers = [];
 
-  // MAY NOT NEED SINCE WE DONT DISPLAY A LIST OF ANSWERS SEPERATE FROM THE QUESTIONS
-  service.getAnswers = function() {
-    $log.debug('inside of service.getAnswers()');
-
-    let url = `${__API_URL__}/api/answers`;
-    let config = {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
-    };
-
-    return $http.get(url, config)
-    .then( res => {
-      $log.debug('answers retrieved', res);
-      service.answers = res.data;
-      return service.answers;
-    })
-    .catch( err => {
-      $log.error(err.message);
-      return $q.reject(err);
-    });
-
-  };
-  // END OF getAnswers function
-
   service.createAnswer = function(questionID, answer) {
     $log.debug('inside of service.createAnswer()');
 

@@ -90,15 +90,17 @@ function authService($q, $log, $http, $window){
   };
 
   service.isLoggedIn = function() {
-    var token = service.getToken();
-    $log.debug('isLoggedIn token', token);
-    if (token) {
-      var payload = JWT.read(token);
-      $log.debug('payload', payload);
-      return payload.exp > Date.now() / 1000;
-    } else {
-      return false;
-    }
+    return service.getToken()
+    .then( token => {
+      $log.debug('isLoggedIn token', token);
+      if (token) {
+        var payload = JWT.read(token);
+        $log.debug('payload', payload);
+        return payload.exp > Date.now() / 1000;
+      } else {
+        return false;
+      }
+    });
   };
 
   service.currentUserId = function() {
