@@ -2,7 +2,7 @@
 
 module.exports = {
   template: require('./answer-item.html'),
-  controller: ['$log', '$stateParams', 'answerService', AnswerItemController],
+  controller: ['$log', '$stateParams', '$rootScope', 'answerService', AnswerItemController],
   controllerAs: 'answerItemCtrl',
   bindings: {
     answer: '<',
@@ -10,21 +10,30 @@ module.exports = {
   }
 };
 
-function AnswerItemController($log, $stateParams, answerService) {
+function AnswerItemController($log, $stateParams, $rootScope, answerService) {
   $log.debug('AnswerItemController');
 
   this.showEditAnswer = false;
 
   this.deleteAnswer = function() {
-    answerService.deleteAnswer($stateParams.id, this.answer._id);
+    answerService.deleteAnswer($stateParams.id, this.answer._id)
+    .then( () => {
+      $rootScope.$broadcast('deleteAnswer', this.answer);
+    });
   };
 
   this.upvoteAnswer = function() {
-    answerService.upvoteAnswer($stateParams.id, this.answer._id);
+    answerService.upvoteAnswer($stateParams.id, this.answer._id)
+    .then( () => {
+      $rootScope.$broadcast('upvoteAnswer', this.answer);
+    });
   };
 
   this.downvoteAnswer = function() {
-    answerService.downvoteAnswer($stateParams.id, this.answer._id);
+    answerService.downvoteAnswer($stateParams.id, this.answer._id)
+    .then( () => {
+      $rootScope.$broadcast('downvoteAnswer', this.answer);
+    });
   };
 
 }
