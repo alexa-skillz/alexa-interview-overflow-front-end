@@ -1,7 +1,7 @@
 <section class="home" ng-cloak>
   <create-question></create-question>
-  <h2>questions</h2>
-  <div class="home-div">
+  <h2 class="color-questions">questions</h2>
+  <div>
     <ul>
       <question-item ng-repeat="item in homeCtrl.questions | questionSearch: homeCtrl.questionSearchTerm"
         question="item"

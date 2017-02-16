@@ -2,12 +2,12 @@
 
   <h2>sign up.</h2>
 
-  <form class="signup-form"
+  <form
     ng-submit="signupCtrl.signup(signupCtrl.user)"
     no-validate>
 
     <div>
-      <input class="input-std"
+      <input class="input"
         type="text"
         placeholder="username"
         ng-minlength="4"
@@ -15,14 +15,14 @@
     </div>
 
     <div>
-      <input class="input-std"
+      <input class="input"
         type="password"
         placeholder="password"
         ng-minlength="3"
         ng-model="signupCtrl.user.password" required>
     </div>
 
-    <button type="submit" class="btn-std" value="sign up">sign up</button>
+    <button class="button" type="submit" value="sign up">sign up</button>
 
   </form>
 

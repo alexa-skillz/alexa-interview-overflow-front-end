@@ -14,12 +14,15 @@
     height: 4vw;
     margin-right: $gutter-std;
     min-height: 50px;
+    padding-top: 8px;
   }
 
   .logo-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: 3vw;
+    text-transform: uppercase;
   }
 
   .signout-container {

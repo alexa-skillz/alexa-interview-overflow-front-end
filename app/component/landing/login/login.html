@@ -1,4 +1,4 @@
-<section class="login-form" ng-cloak>
+<section class="login" ng-cloak>
 
   <h2>sign in.</h2>
 
@@ -11,7 +11,8 @@
         'error': loginForm.username.$invalid,
         'success': loginForm.username.$valid,
       }">
-      <input type="text"
+      <input class="input"
+        type="text"
         name="username"
         placeholder="username"
         ng-minlength="4"
@@ -23,13 +24,14 @@
         'error': loginForm.password.$invalid && loginForm.$submitted,
         'success': loginForm.password.$valid,
       }">
-      <input type="password" name="password"
+      <input class="input"
+        type="password" name="password"
         placeholder="password"
         ng-minlength="3"
         ng-model="loginCtrl.user.password" required>
     </div>
 
-    <button class="btn-std">sign in</button>
+    <button class="button">sign in</button>
 
   </form>
 

@@ -1,1 +1,10 @@
-// placeholder
+.home {
+  // background: orange;
+  width: 70%;
+  margin: 0 auto;
+  // color: red;
+  h2 {
+    margin-bottom: $gutter-std;
+    // margin-top: $gutter-std * 4;
+  }
+}

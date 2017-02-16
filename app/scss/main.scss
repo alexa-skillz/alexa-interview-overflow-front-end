@@ -14,7 +14,7 @@
 // view
 @import '../view/home/home';
 @import '../view/landing/landing';
-
+@import '../view/question/question-view';
 
 // components
 @import '../component/navbar/navbar';
@@ -24,3 +24,5 @@
 @import '../component/question/edit-question/edit-question';
 @import '../component/question/question-item/question-item';
 @import '../component/answer/create-answer/create-answer';
+@import '../component/answer/answer-item/answer-item';
+@import '../component/answer/edit-answer/edit-answer';
