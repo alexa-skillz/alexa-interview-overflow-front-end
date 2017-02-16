@@ -1,7 +1,5 @@
 <section class="question-item" ng-cloak>
 
-  <li>
-
   <div ng-if="!questionItemCtrl.showEditQuestion">
 
     <p class="single-question"><a href="/#!/questions/{{ questionItemCtrl.question._id }}">{{ questionItemCtrl.question.content }}</a></p>
@@ -20,7 +18,7 @@
 
   </div>
 
-  <edit-question ng-if="questionItemCtrl.showEditQuestion &&  questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" question="questionItemCtrl.question"></edit-question>
+  <edit-question ng-if="questionItemCtrl.showEditQuestion && questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" question="questionItemCtrl.question"></edit-question>
 
   <button class="button" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
 

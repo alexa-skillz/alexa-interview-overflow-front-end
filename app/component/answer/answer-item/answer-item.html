@@ -1,5 +1,5 @@
-<section class="answer" ng-cloak>
-  <div>{{ answerItemCtrl.answer.content }}</div>
+<section class="answer-item" ng-cloak>
+  <p class="single-answer">{{ answerItemCtrl.answer.content }}</p>
   <div>
     <!-- <span>
       <div class="btn-group" uib-dropdown>
@@ -14,22 +14,23 @@
         </ul>
       </div>
     </span> -->
+
+    <div class="info-container">
+      <div class="info-container-left">
+        <span class="votes">Upvotes: {{ answerItemCtrl.answer.upvotes }}</span>
+        <a href="" ng-click="answerItemCtrl.upvoteAnswer(answer)"><i class="fa fa-lg fa-thumbs-up"></i></a>
+      </div>
+      <div class="info-container-right">
+        <span class="author">answer by author: {{ answerItemCtrl.answer.author.username }}</span>
+        <span class="date"> on {{ answerItemCtrl.answer.updated | date:'short' }}</span>
+      </div>
+    </div>
+
     <edit-answer ng-if="answerItemCtrl.showEditAnswer && answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" answer="answerItemCtrl.answer"></edit-answer>
+
+    <button class="button" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
 
     <button class="button" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.deleteAnswer()">delete</button>
 
-    <button class="button" ng-if="answerItemCtrl.user.claim._id == answerItemCtrl.answer.author._id" ng-click="answerItemCtrl.showEditAnswer = !answerItemCtrl.showEditAnswer">edit</button>
-    <ul>
-      <li>{{ answerItemCtrl.answer.updated | date:'short' }}</li>
-      <li>Author: {{ answerItemCtrl.answer.author.username }}</li>
-      <p>Upvotes: {{ answerItemCtrl.answer.upvotes }}</p>
-      <p>Downvotes: {{ answerItemCtrl.answer.downvotes }}</p>
-      <a href="" ng-click="answerItemCtrl.upvoteAnswer(answer)">
-        <i class="fa fa-lg fa-thumbs-up"></i>
-      </a>
-      <a href="" ng-click="answerItemCtrl.downvoteAnswer(answer)">
-        <i class="fa fa-lg fa-thumbs-down"></i>
-      </a>
-    </ul>
   </div>
 </section>
