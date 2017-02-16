@@ -3,7 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // width: 80%;
     padding: $gutter-std 0;
     margin: 0 auto $gutter-std auto;
   }
@@ -24,7 +23,6 @@
     flex-direction: row;
     align-items: center;
     font-size: 3vw;
-    // font-size: largest;
     text-transform: uppercase;
   }
 
@@ -33,7 +31,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    // background: orange;
   }
 
   .signout-container li {
@@ -44,16 +41,13 @@
 @media only screen and (max-width: 640px) {
   nav {
     width: 96%;
-    // background: yellow;
   }
 
   .logo-container span {
     font-size: 16px;
-    // background: pink;
   }
 
   .signout-container li {
     font-size: 12px;
-    // background: pink;
   }
 }
