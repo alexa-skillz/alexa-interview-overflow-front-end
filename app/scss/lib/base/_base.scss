@@ -1,17 +1,29 @@
+
 * {
   // outline: 1px orange solid;
 }
 
-html, body {
+html {
   width: 100%;
   font-family: $font-std;
-  font-size: 1.5vw;
+  font-size: 16px;
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    width: 96%;
+  }
 }
 
 h2 {
   padding: $gutter-sm 0;
   font-weight: 700;
-  font-size: 2vw;
+  font-size: large;
   text-transform: uppercase;
   color: $medgray;
 }
@@ -23,26 +35,34 @@ a {
   &:hover {
     color: $orange;
   }
+
+  &:active {
+    color: $orange;
+  }
+
+  &:focus {
+    color: $orange;
+  }
 }
 
 .input {
   box-sizing: border-box;
   width: 40vw;
-  height: 2vw;
+  height: 20px;
   margin: $gutter-sm 0;
   padding: 0 0 0 .5vw;
-  font-size: 1.2vw;
+  font-size: small;
 }
 
 .button {
   box-sizing: border-box;
   width: 40vw;
-  height: 2vw;
+  height: 20px;
   border: none;
   background: $ltgray;
   display: block;
   margin: $gutter-sm 0;
-  font-size: 1.2vw;
+  font-size: small;
 
   &:hover {
     background: $orange;
@@ -51,11 +71,11 @@ a {
 
 .button-small {
   width: 10vw;
-  height: 2vw;
+  height: 20px;
   border: none;
   background: $ltgray;
   margin: $gutter-sm 0 $gutter-sm 2vw;
-  font-size: 1.2vw;
+  font-size: small;
 
   &:hover {
     background: $orange;
@@ -76,7 +96,7 @@ a {
   }
 }
 
-.hover-icons {
+.hover-answers-icons {
   &:hover {
     color: $teal;
   }

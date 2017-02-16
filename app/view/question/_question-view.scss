@@ -5,3 +5,9 @@
     margin-bottom: $gutter-std;
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .question-view {
+    width: 96%;
+  }
+}

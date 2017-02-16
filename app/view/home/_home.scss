@@ -1,7 +1,15 @@
 .home {
   width: 70%;
   margin: 0 auto;
+
   h2 {
     margin-bottom: $gutter-std;
+  }
+
+}
+
+@media only screen and (max-width: 640px) {
+  .home {
+    width: 96%;
   }
 }
