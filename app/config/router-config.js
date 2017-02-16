@@ -5,6 +5,7 @@ module.exports = ['$stateProvider', '$urlRouterProvider', routerConfig];
 function routerConfig($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.when('/register' , '/join#register');
   $urlRouterProvider.when('/login' , '/join#login');
+  $urlRouterProvider.when('/user' , '/user');
   $urlRouterProvider.when('', '/');
 
   let states = [
@@ -28,6 +29,13 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       template: require('../view/landing/landing.html'),
       controller: 'LandingController',
       controllerAs: 'landingCtrl'
+    },
+    {
+      name: 'user',
+      url: '/user',
+      template: require('../view/user/user.html'),
+      controller: 'UserViewController',
+      controllerAs: 'userViewCtrl'
     }
   ];
 

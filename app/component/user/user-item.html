@@ -1,0 +1,8 @@
+<section class="user-item" ng-cloak>
+
+    <p class="single-user"><a href="/#!/users/{{ userItemCtrl.user._id }}">{{ userItemCtrl.user.username }}</a></p>
+    <p>
+      THIS IS USER ITEM
+    </p>
+    <user-item ng-repeat="item in userCtrl.users" user="item"></user-item>
+</section>
