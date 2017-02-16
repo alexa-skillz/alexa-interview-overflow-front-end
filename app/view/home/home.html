@@ -1,5 +1,8 @@
 <section class="home" ng-cloak>
   <create-question></create-question>
+  <input ng-model="homeCtrl.questionSearchTerm" type="text" placeholder="search a question">
+  <h2>questions</h2>
+  <div class="home-div">
   <h2 class="color-questions">questions</h2>
   <div>
     <ul>
@@ -7,8 +10,6 @@
         question="item"
         delete-done="homeCtrl.questionDeleteDone(questionData)"
         ng-click="homeCtrl.currentQuestion = item">
-      </question-item>
-      <question-item ng-repeat="question in homeCtrl.questions" question="question">
       </question-item>
     </ul>
   </div>
