@@ -34,8 +34,8 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       name: 'user',
       url: '/user',
       template: require('../view/user/user.html'),
-      controller: 'UserController',
-      controllerAs: 'userCtrl'
+      controller: 'UserViewController',
+      controllerAs: 'userViewCtrl'
     }
   ];
 

@@ -16,7 +16,4 @@ function UserItemController($log, authService, userService) {
   .then( payload => {
     return this.user = payload;
   });
-
-  
-
 }
