@@ -1,65 +1,10 @@
 @import "../../../scss/lib/layout/info-container";
 
 .question-item {
-  // background: yellow;
-  // border: 1px solid $ltgray;
   margin-bottom: $gutter-std * 4;
-
-  // span {
-  //   // border: 1px dotted $ltgray;
-  // }
 
   .single-question {
     font-size: 1.8vw;
     margin-bottom: 1vw;
   }
-  //
-  // .info-container {
-  //   // background: red;
-  //   // display: flex;
-  //   // text-size: 1vw;
-  //   // span {
-  //   //   text-size: .05vw;
-  //   //   text-transform: uppercase;
-  //   // }
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   // color: red;
-  // }
-  //
-  // .info-container-left {
-  //
-  // }
-  //
-  // .info-container-right {
-  //
-  // }
-  //
-  // @mixin info-content {
-  //   // text-size: $font-sm;
-  //   // color: red;
-  //   // text-transform: uppercase;
-  //   font-size: 1vw;
-  //   text-transform: uppercase;
-  // }
-  //
-  // .date {
-  //   @include info-content;
-  //   // font-size: .5vw;
-  // }
-  //
-  // .author {
-  //   @include info-content;
-  // }
-  //
-  // .votes {
-  //   @include info-content;
-  // }
-  //
-  // .numanswers {
-  //   @include info-content;
-  //   margin-right: 2vw;
-  // }
-
 }
