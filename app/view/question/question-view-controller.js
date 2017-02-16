@@ -28,28 +28,8 @@ function QuestionViewController($log, $rootScope, $stateParams, questionService,
     this.displayQuestion();
   });
 
-  $rootScope.$on('addAnswer', () => {
-    $log.log('run the add answer');
-    this.displayQuestion();
-  });
-
-  $rootScope.$on('deleteAnswer', () => {
-    $log.log('run the delete answer');
-    this.displayQuestion();
-  });
-
-  $rootScope.$on('upvoteAnswer', () => {
-    $log.log('run the upvote answer');
-    this.displayQuestion();
-  });
-
-  $rootScope.$on('downvoteAnswer', () => {
-    $log.log('run the down answer');
-    this.displayQuestion();
-  });
-
-  $rootScope.$on('editAnswer', () => {
-    $log.log('run the edit answer');
+  $rootScope.$on('broadcastEvent', () => {
+    $log.log('breadcastEvent');
     this.displayQuestion();
   });
 

@@ -14,7 +14,7 @@ function CreateAnswerController($log, $stateParams, $rootScope, answerService, a
   this.createAnswer = function() {
     answerService.createAnswer($stateParams.id,this.answer)
     .then( () => {
-      $rootScope.$broadcast('addAnswer', this.answer);
+      $rootScope.$broadcast('broadcastEvent', this.answer);
       this.answer.content = null;
     });
   };

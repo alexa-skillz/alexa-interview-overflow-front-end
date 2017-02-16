@@ -15,7 +15,7 @@ function EditAnswerController($log, $stateParams, $rootScope, answerService) {
   this.updateAnswer = function() {
     answerService.updateAnswer($stateParams.id, this.answer._id, this.answer)
     .then( () => {
-      $rootScope.$broadcast('editAnswer', this.answer);
+      $rootScope.$broadcast('broadcastEvent', this.answer);
     });
   };
 

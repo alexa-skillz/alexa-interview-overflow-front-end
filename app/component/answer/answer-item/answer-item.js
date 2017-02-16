@@ -18,21 +18,21 @@ function AnswerItemController($log, $stateParams, $rootScope, answerService) {
   this.deleteAnswer = function() {
     answerService.deleteAnswer($stateParams.id, this.answer._id)
     .then( () => {
-      $rootScope.$broadcast('deleteAnswer', this.answer);
+      $rootScope.$broadcast('broadcastEvent', this.answer);
     });
   };
 
   this.upvoteAnswer = function() {
     answerService.upvoteAnswer($stateParams.id, this.answer._id)
     .then( () => {
-      $rootScope.$broadcast('upvoteAnswer', this.answer);
+      $rootScope.$broadcast('broadcastEvent', this.answer);
     });
   };
 
   this.downvoteAnswer = function() {
     answerService.downvoteAnswer($stateParams.id, this.answer._id)
     .then( () => {
-      $rootScope.$broadcast('downvoteAnswer', this.answer);
+      $rootScope.$broadcast('broadcastEvent', this.answer);
     });
   };
 
