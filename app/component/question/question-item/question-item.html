@@ -18,12 +18,17 @@
 
   <!-- </div> -->
 
+
   <div class="edit-delete-buttons">
     <edit-question ng-if="questionItemCtrl.showEditQuestion && questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" question="questionItemCtrl.question"></edit-question>
+
+  <div ng-if="!questionItemCtrl.showEditQuestion">
 
     <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
 
     <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
   </div>
+
+</div>
 
 </section>
