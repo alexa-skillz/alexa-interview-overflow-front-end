@@ -48,10 +48,12 @@ a {
 .input {
   box-sizing: border-box;
   width: 40vw;
-  height: 20px;
   margin: $gutter-sm 0;
-  padding: 0 0 0 .5vw;
+  padding: 2%;
   font-size: small;
+  border-radius: 2px;
+  box-shadow: none;
+  border: 1px solid $ltgray;
 }
 
 .textarea {
@@ -59,19 +61,21 @@ a {
   box-sizing: border-box;
   width: 40vw;
   margin: $gutter-sm 0;
-  padding: 0 0 0 .5vw;
+  padding: 2%;
   font-size: small;
+  border-radius: 2px;
 }
 
 .button {
   box-sizing: border-box;
   width: 40vw;
-  height: 20px;
   border: none;
   background: $ltgray;
   display: block;
   margin: $gutter-sm 0;
+  padding: 3%;
   font-size: small;
+  border-radius: 2px;
 
   &:hover {
     background: $orange;
@@ -80,11 +84,12 @@ a {
 
 .button-small {
   width: 10vw;
-  height: 20px;
   border: none;
   background: $ltgray;
   margin: $gutter-sm 0 $gutter-sm 2vw;
+  padding: 3%;
   font-size: small;
+  border-radius: 2px;
 
   &:hover {
     background: $orange;
