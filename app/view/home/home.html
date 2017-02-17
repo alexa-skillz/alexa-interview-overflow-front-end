@@ -1,1 +1,16 @@
-<!-- placeholder -->
+<section class="home" ng-cloak>
+  <div class="search-container">
+    <h2 class="color-questions">search</h2>
+    <input class="input" ng-model="homeCtrl.questionSearchTerm" type="text" placeholder="search for a question">
+  </div>
+  <h2 class="color-questions">questions</h2>
+  <div>
+    <ul>
+      <question-item ng-repeat="question in homeCtrl.questions | questionSearch: homeCtrl.questionSearchTerm | orderBy: '-(upvotes - downvotes)'" question="question">
+      </question-item>
+    </ul>
+  </div>
+
+  <create-question ng-if="homeCtrl.authenticationStatus"></create-question>
+
+</section>

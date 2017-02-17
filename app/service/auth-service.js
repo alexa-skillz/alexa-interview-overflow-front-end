@@ -1,4 +1,5 @@
 'use strict';
+const JWT = require('jwt-client');
 
 module.exports = ['$q', '$log', '$http', '$window', authService];
 
@@ -17,12 +18,14 @@ function authService($q, $log, $http, $window){
 
     $window.localStorage.setItem('token', _token);
     token = _token;
+    $log.debug('setToken', token);
     return $q.resolve(token);
   }
 
   service.getToken = function(){
     $log.debug('authService.getToken');
     if (token) {
+      $log.debug('getToken', token);
       return $q.resolve(token);
     }
 
@@ -42,7 +45,7 @@ function authService($q, $log, $http, $window){
   service.signup = function(user) {
     $log.debug('authService.signup()');
 
-    let url = `${__API_URL__}/api/signup`;
+    let url = `${__API_URL__}/register`;
     let config = {
       headers: {
         'Content-Type': 'application/json',
@@ -52,8 +55,8 @@ function authService($q, $log, $http, $window){
 
     return $http.post(url, user, config)
     .then( res => {
-      $log.log('success', res.data);
-      return setToken(res.data);
+      $log.debug('success', res.data.token);
+      return setToken(res.data.token);
     })
     .catch(err => {
       $log.error('failure', err.message);
@@ -64,25 +67,54 @@ function authService($q, $log, $http, $window){
   service.login = function(user){
     $log.debug('authService.login()');
 
-    let url = `${__API_URL__}/api/login`;
-    let base64 = $window.btoa(`${user.username}:${user.password}`);
+    let url = `${__API_URL__}/login`;
+    let data = {
+      username: user.username,
+      password: user.password,
+    };
     let config = {
       headers: {
         Accept: 'application/json',
-        Authorization: `Basic ${base64}`,
       }
     };
 
-    return $http.get(url, config)
+    return $http.post(url, data, config)
     .then( res => {
-      $log.log('success', res.data);
-      return setToken(res.data);
+      $log.debug('success', res.data.token);
+      return setToken(res.data.token);
     })
     .catch( err => {
       $log.error(err.message);
       return $q.reject(err);
     });
   };
+
+  service.isLoggedIn = function() {
+    return service.getToken()
+    .then( token => {
+      $log.debug('isLoggedIn token', token);
+      if (token) {
+        var payload = JWT.read(token);
+        $log.debug('payload', payload);
+        payload.exp > Date.now() / 1000;
+        return payload;
+      } else {
+        return false;
+      }
+    });
+  };
+
+  service.currentUserId = function() {
+    return service.getToken()
+    .then( token => {
+      let userToken = token;
+
+      let payload = JWT.read(userToken);
+      $log.debug('payload', payload);
+      return payload;
+    });
+  };
+
 
   return service;
 }

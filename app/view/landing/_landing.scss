@@ -1,1 +1,29 @@
-// placeholder
+@import "../../scss/lib/theme/vars";
+
+.landing {
+  width: 50%;
+  margin: $gutter-std*2 auto 32vh auto;
+
+  .button {
+    margin-bottom: $gutter-std;
+  }
+
+  .bold {
+    padding-left: $gutter-sm;
+  }
+
+  .oauth-container {
+    margin: 0 0 $gutter-std 0;
+
+    a {
+      margin-right: $gutter-sm;
+      margin-bottom: $gutter-std;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .landing {
+    width: 80%;
+  }
+}

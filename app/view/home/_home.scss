@@ -1,1 +1,28 @@
-// placeholder
+.home {
+  width: 70%;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: $gutter-std;
+  }
+
+  .about-this {
+    color: $medgray;
+    border: 1px dotted $ltgray;
+    padding: $gutter-std;
+    margin: 0 auto $gutter-std*2 auto;
+    line-height: 2vw;
+    width: 70%;
+  }
+
+  .search-container {
+    margin-bottom: $gutter-std * 4;
+    margin-top: $gutter-std * 2;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    width: 96%;
+  }
+}

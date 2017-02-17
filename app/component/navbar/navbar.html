@@ -1,1 +1,17 @@
-<!-- placeholder -->
+<section class="navbar-io" ng-cloak>
+  <nav>
+    <div class="logo-container">
+      <a href="/#!/"><img src="../../assets/img/logo.png" alt="interview overflow logo" title="interview overflow logo"></a>
+      <span><a href="/#!/" class="title">Interview Overflow</a></span>
+    </div>
+    <ul class="signout-container" ng-if="navbarCtrl.authenticationStatus">
+      <li ng-hide="navbarCtrl.hideButtons"><a href="/">ask a question</a></li>
+      <li ng-hide="navbarCtrl.hideButtons"><a href="/#!/user">profile</a></li>
+      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()"><a href="#">sign out</a></li>
+    </ul>
+    <ul class="signout-container" ng-if="!navbarCtrl.authenticationStatus">
+      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()"><a href="/#!/join#signup">sign up</a></li>
+      <li ng-hide="navbarCtrl.hideButtons" ng-click="navbarCtrl.logout()"><a href="/#!/join#login">sign in</a></li>
+    </ul>
+  </nav>
+</section>

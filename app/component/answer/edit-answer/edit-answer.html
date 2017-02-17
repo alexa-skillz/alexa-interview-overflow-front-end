@@ -1,0 +1,13 @@
+<section class="edit-answer">
+  <form
+    name="editAnswer"
+    ng-submit="editAnswerCtrl.updateAnswer()"
+    novalidate>
+
+    <fieldset>
+      <textarea class="textarea" rows="10" cols="50" name="content" ng-model="editAnswerCtrl.answer.content"></textarea>
+      <button class="button hover-answers" type="submit">update</button>
+    </fieldset>
+
+  </form>
+</section>

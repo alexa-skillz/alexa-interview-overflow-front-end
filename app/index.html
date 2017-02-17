@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="alexaSkillz">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
     <title>Interview Overflow</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+      <navbar ng-cloak></navbar>
+    </header>
+    <main>
+      <ui-view ng-cloak></ui-view>
+    </main>
+    <footer>
+
+      <div class="footer-container">
+
+        <div class="about-us">
+          <ul>
+            <li class="team-title">The Team</li>
+            <li><a href="https://github.com/brittdawn">Britt Dawn</a></li>
+            <li><a href="https://github.com/jonathanheemstra">Jonny Heemstra</a></li>
+            <li><a href="https://github.com/meganreardon">Megan Reardon</a></li>
+            <li><a href="https://github.com/peterkim2">Peter Kim</a></li>
+          </ul>
+        </div>
+
+        <div class="social-media">
+
+          <span><a href="http://www.amazon.com"><i class="fa fa-amazon" aria-hidden="true"></i></a></span>
+          <span><a href="http://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
+          <span><a href="http://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></span>
+
+        </div>
+
+      </div>
+
+    </footer>
   </body>
+  <script src="https://use.fontawesome.com/80c44fb1fa.js"></script>
 </html>

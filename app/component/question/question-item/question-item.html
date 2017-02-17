@@ -1,0 +1,27 @@
+<section class="question-item" ng-cloak>
+
+  <p class="single-question"><a href="/#!/questions/{{ questionItemCtrl.question._id }}">{{ questionItemCtrl.question.content }}</a></p>
+
+  <edit-question ng-if="questionItemCtrl.showEditQuestion && questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" question="questionItemCtrl.question"></edit-question>
+
+  <div class="info-container">
+    <div class="info-container-left">
+      <span class="numanswers">answers: {{ questionItemCtrl.question.answers.length }}</span>
+      <span class="votes">upvotes: {{ questionItemCtrl.question.upvotes }}</span>
+      <a class="votes" href="" ng-click="questionItemCtrl.upvoteQuestion(question)"><i class="fa fa-lg fa-thumbs-up"></i></a>
+    </div>
+    <div class="info-container-right">
+      <span class="author">included by {{ questionItemCtrl.question.author.username }}</span>
+      <span class="date"> on {{ questionItemCtrl.question.created | date:"MM/dd/yyyy 'at' h:mma" }}</span>
+    </div>
+  </div>
+
+  <div class="edit-delete-buttons">
+    <div ng-if="!questionItemCtrl.showEditQuestion">
+      <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.showEditQuestion = !questionItemCtrl.showEditQuestion">edit</button>
+
+      <button class="button-small" ng-if="questionItemCtrl.user.claim._id == questionItemCtrl.question.author._id" ng-click="questionItemCtrl.deleteQuestion()">delete</button>
+    </div>
+  </div>
+
+</section>

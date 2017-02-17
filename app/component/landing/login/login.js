@@ -1,7 +1,5 @@
 'use strict';
 
-require('./_login.scss');
-
 module.exports = {
   template: require('./login.html'),
   controller: ['$log', '$location', 'authService', LoginController],
@@ -13,15 +11,15 @@ function LoginController($log, $location, authService) {
 
   authService.getToken()
   .then( () => {
-    $location.url('/home');
+    $location.url('');
   });
 
   this.login = function() {
-    $log.log('loginCtrl.login()');
+    $log.debug('loginCtrl.login()');
 
     authService.login(this.user)
     .then( () => {
-      $location.url('/home');
+      $location.url('');
     });
   };
 }

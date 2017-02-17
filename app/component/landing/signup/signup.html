@@ -1,27 +1,29 @@
-<section class="signup">
-  <span>sign up.</span>
-  <form class="signup-form"
+<section class="signup" ng-cloak>
+
+  <h2>sign up</h2>
+
+  <form
     ng-submit="signupCtrl.signup(signupCtrl.user)"
     no-validate>
 
-      <input class="input-std"
+    <div>
+      <input class="input"
         type="text"
         placeholder="username"
         ng-minlength="4"
         ng-model="signupCtrl.user.username" required>
+    </div>
 
-      <input class="input-std"
-        type="email"
-        placeholder="email"
-        ng-model="signupCtrl.user.email">
-
-      <input class="input-std"
+    <div>
+      <input class="input"
         type="password"
         placeholder="password"
         ng-minlength="3"
         ng-model="signupCtrl.user.password" required>
+    </div>
 
-      <input type="submit" class="btn-std" value="sign up">
+    <button class="button" type="submit" value="sign up">sign up</button>
+
   </form>
-  <div class="clearfix"></div>
+
 </section>
