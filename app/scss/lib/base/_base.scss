@@ -1,24 +1,9 @@
-* {
-  // outline: 1px orange solid;
-}
-
 html {
   width: 100%;
   font-family: $font-std;
   font-size: 16px;
   line-height: 18px;
 }
-
-// body {
-//   width:100%;
-//   margin: 0 auto;
-// }
-//
-// @media only screen and (max-width: 768px) {
-//   body {
-//     width: 96%;
-//   }
-// }
 
 h2 {
   padding: $gutter-sm 0;
@@ -69,6 +54,16 @@ i {
   padding: 2%;
   font-size: small;
   border-radius: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .input {
+    width: 100%;
+  }
+
+  .textarea {
+    width: 100%;
+  }
 }
 
 .button {

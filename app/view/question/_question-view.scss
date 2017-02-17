@@ -1,6 +1,7 @@
 .question-view {
   width: 70%;
   margin: 0 auto;
+  padding-top: 8vh;
   h2 {
     margin-bottom: $gutter-std;
   }
@@ -8,6 +9,7 @@
 
 @media only screen and (max-width: 768px) {
   .question-view {
-    width: 96%;
+    width: 100%;
+    padding-top: $gutter-std*2;
   }
 }
