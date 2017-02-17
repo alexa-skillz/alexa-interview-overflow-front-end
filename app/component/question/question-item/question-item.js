@@ -2,7 +2,7 @@
 
 module.exports = {
   template: require('./question-item.html'),
-  controller: ['$log', 'questionService', 'authService', QuestionItemController],
+  controller: ['$log', '$rootScope', 'questionService', 'authService', QuestionItemController],
   controllerAs: 'questionItemCtrl',
   bindings: {
     question: '<',
@@ -10,7 +10,7 @@ module.exports = {
   }
 };
 
-function QuestionItemController($log, questionService, authService) {
+function QuestionItemController($log, $rootScope, questionService, authService) {
   $log.debug('QuestionItemController');
 
   this.showEditQuestion = false;
@@ -21,15 +21,35 @@ function QuestionItemController($log, questionService, authService) {
   });
 
   this.deleteQuestion = function() {
-    questionService.deleteQuestion(this.question._id);
+    questionService.deleteQuestion(this.question._id)
+    .then( () => {
+      $rootScope.$broadcast('broadcastEvent', this.question);
+    });
   };
 
   this.upvoteQuestion = function() {
-    questionService.upvoteQuestion(this.question._id);
+    questionService.upvoteQuestion(this.question._id)
+    .then( () => {
+      $rootScope.$broadcast('broadcastEvent', this.question);
+    });
   };
 
   this.downvoteQuestion = function() {
-    questionService.downvoteQuestion(this.question._id);
+    questionService.downvoteQuestion(this.question._id)
+    .then( () => {
+      $rootScope.$broadcast('broadcastEvent', this.question);
+    });
   };
+
+  $rootScope.$on('$locationChangeSuccess', () => {
+    this.displayQuestion();
+    this.authentication();
+  });
+
+  $rootScope.$on('broadcastEvent', () => {
+    $log.debug('breadcastEvent');
+    this.displayQuestion();
+    this.authentication();
+  });
 
 }

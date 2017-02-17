@@ -109,7 +109,7 @@ function questionService($q, $log, $http, authService) {
 
       return $http.delete(url, config);
     })
-    .then( res => {
+    .then( () => {
       for (let i = 0; i < service.questions.length; i++) {
         let current = service.questions[i];
         if (current._id === questionID) {

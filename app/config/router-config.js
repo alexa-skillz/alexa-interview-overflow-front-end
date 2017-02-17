@@ -28,6 +28,13 @@ function routerConfig($stateProvider, $urlRouterProvider) {
       template: require('../view/landing/landing.html'),
       controller: 'LandingController',
       controllerAs: 'landingCtrl'
+    },
+    {
+      name: 'user',
+      url: '/user',
+      template: require('../view/user/user-view.html'),
+      controller: 'UserViewController',
+      controllerAs: 'userViewCtrl'
     }
   ];
 
