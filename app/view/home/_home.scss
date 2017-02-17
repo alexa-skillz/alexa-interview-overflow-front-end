@@ -14,6 +14,10 @@
     line-height: 2vw;
     width: 70%;
   }
+
+  .search-container {
+    margin-bottom: $gutter-std * 4;
+  }
 }
 
 @media only screen and (max-width: 640px) {
