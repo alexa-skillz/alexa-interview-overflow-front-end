@@ -6,6 +6,9 @@
   "repository": "https://github.com/alexa-skillz/alexa-interview-overflow-front-end.git",
   "author": "Britt Dawn <https://github.com/brittdawn> Megan Reardon <https://github.com/meganreardon> Jonathan Heemstra <https://github.com/jonathanheemstra> Peter Kim <https://github.com/peterkim2>",
   "license": "MIT",
+  "engines": {
+    "node": "4.4.7"
+  },
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "build-watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
