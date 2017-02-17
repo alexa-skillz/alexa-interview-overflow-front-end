@@ -2,14 +2,14 @@
 
 module.exports = {
   template: require('./user-item.html'),
-  controller: ['$log', 'authService', 'userService', UserItemController],
+  controller: ['$log', 'authService', UserItemController],
   controllerAs: 'userItemCtrl',
   bindings: {
     user: '<'
   }
 };
 
-function UserItemController($log, authService, userService) {
+function UserItemController($log, authService) {
   $log.debug('UserItemController');
 
   authService.currentUserId()

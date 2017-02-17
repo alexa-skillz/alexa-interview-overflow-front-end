@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = ['$q', '$log', '$http', 'authService', userService];
+module.exports = ['$q', '$log', '$http', userService];
 
-function userService($q, $log, $http, authService) {
+function userService($q, $log, $http) {
   $log.debug('userService');
 
   let service = {};

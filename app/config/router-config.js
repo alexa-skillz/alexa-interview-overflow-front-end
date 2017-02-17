@@ -5,7 +5,6 @@ module.exports = ['$stateProvider', '$urlRouterProvider', routerConfig];
 function routerConfig($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.when('/register' , '/join#register');
   $urlRouterProvider.when('/login' , '/join#login');
-  $urlRouterProvider.when('/user' , '/user');
   $urlRouterProvider.when('', '/');
 
   let states = [
@@ -33,7 +32,7 @@ function routerConfig($stateProvider, $urlRouterProvider) {
     {
       name: 'user',
       url: '/user',
-      template: require('../view/user/user.html'),
+      template: require('../view/user/user-view.html'),
       controller: 'UserViewController',
       controllerAs: 'userViewCtrl'
     }
