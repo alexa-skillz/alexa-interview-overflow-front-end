@@ -9,7 +9,8 @@
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "build-watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "lint": "eslint ./app/**/*.js ./app/*.js !node_modules"
+    "lint": "eslint ./app/**/*.js ./app/*.js !node_modules",
+    "heroku-postbuild": "webpack -p --progress"
   },
   "dependencies": {
     "angular": "^1.6.2",
