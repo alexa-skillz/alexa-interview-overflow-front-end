@@ -1,5 +1,50 @@
 footer {
-  height: 2vw;
-  margin-top: $gutter-std * 2;
-  padding: $gutter-std;
+  width: 100%;
+  height: 32vh;
+  background: $medgray;
+  padding-top: $gutter-sm;
+
+  .footer-container {
+    width: 80%;
+    margin: $gutter-std auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .about-us {
+    color: white;
+  }
+
+  .about-us a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  .team-title {
+    text-transform: uppercase;
+    margin-bottom: 1.8vw;
+  }
+
+  .social-media span {
+    margin-left: $gutter-std;
+    color: white;
+    font-size: 3vw;
+  }
+
+  i {
+    color: white;
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .footer-container {
+      width: 96%;
+    }
+  }
 }

@@ -1,9 +1,8 @@
 @import "../../scss/lib/theme/vars";
 
 .landing {
-
   width: 50%;
-  margin: 0 auto $gutter-std auto;
+  margin: $gutter-std*2 auto 32vh auto;
 
   .button {
     margin-bottom: $gutter-std;
@@ -18,6 +17,13 @@
 
     a {
       margin-right: $gutter-sm;
+      margin-bottom: $gutter-std;
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .landing {
+    width: 80%;
   }
 }
