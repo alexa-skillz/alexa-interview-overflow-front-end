@@ -7,9 +7,16 @@ header {
   // position: fixed;
   // display: block;
   top: 0;
+  position: fixed;
   border-bottom: solid 1px #eee;
 
   a.title {
     text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    position: static;
   }
 }
