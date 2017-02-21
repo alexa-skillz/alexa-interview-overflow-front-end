@@ -55,6 +55,8 @@ i {
   padding: 2%;
   font-size: small;
   border-radius: 2px;
+  box-shadow: none;
+  border: 1px solid $ltgray;
 }
 
 @media only screen and (max-width: 768px) {
